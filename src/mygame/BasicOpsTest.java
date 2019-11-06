@@ -9,6 +9,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.ArcType;
 import javafx.stage.Stage;
 
+//cai nay là code mẫu trên mạng để hiểu cách hoạt động của canvas vs GraphicsContext thôi
 public class BasicOpsTest extends Application {
 
     public static void main(String[] args) {

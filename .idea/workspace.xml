@@ -2,18 +2,29 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="00d4674f-65c0-4528-8370-8fc832b39f6b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/mygame/BasicOpsTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/mygame/Config.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/mygame/GameController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/mygame/GameField.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/mygame/GameStage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/mygame/tile/Mountain.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TowerDefense/mygame/Field.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TowerDefense/mygame/Config.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TowerDefense/mygame/Config.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TowerDefense/mygame/Entity.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TowerDefense/mygame/Entity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TowerDefense/mygame/GameController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TowerDefense/mygame/GameController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TowerDefense/mygame/GameField.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TowerDefense/mygame/GameField.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TowerDefense/mygame/GameStage.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TowerDefense/mygame/GameStage.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/TowerDefense/mygame/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TowerDefense/mygame/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TowerDefense/mygame/Stage.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mygame/Field.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TowerDefense/mygame/tile/Moutain.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TowerDefense/mygame/tile/Road.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TowerDefense/mygame/tile/Road.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TowerDefense/mygame/tile/Tile.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TowerDefense/mygame/tile/Tile.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TowerDefense/stage/demo.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TowerDefense/stage/demo.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mygame/BasicOpsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mygame/BasicOpsTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mygame/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mygame/Config.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mygame/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mygame/Entity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mygame/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mygame/GameController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mygame/GameField.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mygame/GameField.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mygame/GameStage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mygame/GameStage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/mygame/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mygame/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mygame/Stage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mygame/tile/Moutain.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mygame/tile/Road.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mygame/tile/Road.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mygame/tile/Tile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mygame/tile/Tile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/stage/demo.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/stage/demo.txt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -88,6 +99,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="GameStage" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="mygame.GameStage" />
+      <module name="TowerDefense" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="mygame.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="mygame.Main" />
       <module name="TowerDefense" />
@@ -108,26 +132,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="lon" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="lon.lon" />
-      <module name="TowerDefense" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="lon.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
+        <item itemvalue="Application.GameStage" />
         <item itemvalue="Application.GameController" />
         <item itemvalue="Application.BasicOpsTest" />
         <item itemvalue="Application.lon (1)" />
-        <item itemvalue="Application.lon" />
       </list>
     </recent_temporary>
   </component>

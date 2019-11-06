@@ -7,6 +7,8 @@ import javafx.scene.canvas.GraphicsContext;
 import javafx.stage.Stage;
 import javafx.scene.canvas.Canvas;
 
+import java.io.FileNotFoundException;
+
 public class Main extends Application {
 
     public static void main(String[] args) {
@@ -14,7 +16,7 @@ public class Main extends Application {
     }
 
     @Override
-    public void start(Stage primaryStage) {
+    public void start(Stage primaryStage) throws FileNotFoundException {
         primaryStage.setTitle(Config.GAME_NAME);
         Canvas canvas = new Canvas(Config.SCREEN_WIDTH, Config.SCREEN_HEIGHT);
         GraphicsContext gc = canvas.getGraphicsContext2D();
