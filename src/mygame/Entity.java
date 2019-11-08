@@ -1,11 +1,31 @@
 package mygame;
 
+import javafx.geometry.Rectangle2D;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
 
 public abstract class Entity {
-    protected int x, y;
-    protected Image image;
+    private int x;
+    private int y;
+    private int velocityX;
+    private int velocityY;
+    private Image image;
+
+    public int getVelocityX() {
+        return velocityX;
+    }
+
+    public void setVelocityX(int velocityX) {
+        this.velocityX = velocityX;
+    }
+
+    public int getVelocityY() {
+        return velocityY;
+    }
+
+    public void setVelocityY(int velocityY) {
+        this.velocityY = velocityY;
+    }
 
     public Image getImage() {
         return image;
@@ -21,9 +41,7 @@ public abstract class Entity {
         this.y = y;
     }
 
-    public int getX() {
-        return x;
-    }
+    public int getX() {return x;}
     public void setX(int x) {
         this.x = x;
     }
@@ -35,7 +53,15 @@ public abstract class Entity {
     }
 
     public void draw(GraphicsContext gc) {
-        //System.out.println(y);
         gc.drawImage(image, x, y);
+    }
+    public void update() {
+
+    }
+    public Rectangle2D getBoundary() {
+        return new Rectangle2D(x, y, Config.TILE_SIZE, Config.TILE_SIZE);
+    }
+    public boolean intersects(Entity e) {
+        return e.getBoundary().intersects(this.getBoundary());
     }
 }

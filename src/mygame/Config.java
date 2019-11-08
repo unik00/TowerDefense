@@ -11,10 +11,12 @@ public class Config {
     public static final int TILE_HORIZONTAL = 10;
     public static final int TILE_VERTICAL = 7;
 
-    public static final int SCREEN_WIDTH = TILE_SIZE * TILE_HORIZONTAL;
+    public static final int SCREEN_WIDTH = TILE_SIZE * (TILE_HORIZONTAL + 5);
     public static final int SCREEN_HEIGHT = TILE_SIZE * TILE_VERTICAL;
 
     public static final Image ROAD_IMAGE = new Image("file:src/resources/AssetsKit_2/PNG/Default size/towerDefense_tile050.png");
-    public static final Image MOUNTAIN_IMAGE = new Image("file:src/resources/AssetsKit_2/PNG/Default size/towerDefense_tile119.png");
+    public static final Image MOUNTAIN_IMAGE = new Image("file:src/resources/AssetsKit_2/PNG/Default size/towerDefense_tile042.png");
+
+    public static final Image ENENY_NORMAL = new Image("file:src/resources/AssetsKit_2/PNG/Default size/towerDefense_tile270.png");
 }
 

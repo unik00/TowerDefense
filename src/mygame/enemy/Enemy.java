@@ -7,8 +7,10 @@ public class Enemy extends Entity {
     private int speed;
     private int armor;
     private int reward;
-    public void draw() {
 
+    public Enemy() {}
+    public Enemy(int x, int y) {
+        super(x, y);
     }
 
     public int getHitPoint() {
