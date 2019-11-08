@@ -10,6 +10,15 @@ public abstract class Entity {
     private int velocityX;
     private int velocityY;
     private Image image;
+    private GameField field;
+
+    public GameField getField() {
+        return field;
+    }
+
+    public void setField(GameField field) {
+        this.field = field;
+    }
 
     public int getVelocityX() {
         return velocityX;

@@ -14,15 +14,18 @@ public class GameController extends AnimationTimer {
     private GameStage stage;
     private GraphicsContext gc;
 
-    private Entity me = new NormalEnemy(0 * 64, 1 * 64);
+    private Entity demoEnemy;
 
     public GameController(GraphicsContext gc) throws FileNotFoundException {
         this.field = new GameField(GameStage.load("src/stage/demo.txt"));
         this.gc = gc;
+        this.demoEnemy = new NormalEnemy(field.getSpawnerX(), field.getSpawnerY());
+        this.field.addEntity(demoEnemy);
     }
 
     @Override
     public void handle(long current) {
+    //    System.out.println(current);
         field.getEntities().forEach(e  -> e.draw(gc));
     }
 
