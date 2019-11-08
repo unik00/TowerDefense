@@ -2,6 +2,8 @@ package mygame;
 
 import mygame.tile.Mountain;
 import mygame.tile.Road;
+import mygame.tile.Spawner;
+import mygame.tile.Target;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -32,8 +34,14 @@ public class GameStage {
                 if (type == 0) {
                     entities.add(new Road(j * Config.TILE_SIZE, i * Config.TILE_SIZE));
                 }
-                else {
+                else if (type == 1){
                     entities.add(new Mountain(j * Config.TILE_SIZE, i * Config.TILE_SIZE));
+                }
+                else if (type == 2){
+                    entities.add(new Spawner(j * Config.TILE_SIZE, i * Config.TILE_SIZE));
+                }
+                else if (type == 3){
+                    entities.add(new Target(j * Config.TILE_SIZE, i * Config.TILE_SIZE));
                 }
             }
         }

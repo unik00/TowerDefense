@@ -16,7 +16,9 @@ public class Config {
 
     public static final Image ROAD_IMAGE = new Image("file:src/resources/AssetsKit_2/PNG/Default size/towerDefense_tile050.png");
     public static final Image MOUNTAIN_IMAGE = new Image("file:src/resources/AssetsKit_2/PNG/Default size/towerDefense_tile042.png");
+    public static final Image SPAWNER_IMAGE = new Image("file:src/resources/AssetsKit_2/PNG/Default size/towerDefense_tile109.png");
+    public static final Image TARGET_IMAGE = new Image("file:src/resources/AssetsKit_2/PNG/Default size/towerDefense_tile110.png");
 
-    public static final Image ENENY_NORMAL = new Image("file:src/resources/AssetsKit_2/PNG/Default size/towerDefense_tile270.png");
+    public static final Image ENEMY_NORMAL = new Image("file:src/resources/AssetsKit_2/PNG/Default size/towerDefense_tile270.png");
 }
 

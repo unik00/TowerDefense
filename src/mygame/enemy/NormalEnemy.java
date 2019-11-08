@@ -6,6 +6,6 @@ public class NormalEnemy extends Enemy {
     public NormalEnemy() {}
     public NormalEnemy(int x, int y) {
         super(x, y);
-        setImage(Config.ENENY_NORMAL);
+        setImage(Config.ENEMY_NORMAL);
     }
 }
