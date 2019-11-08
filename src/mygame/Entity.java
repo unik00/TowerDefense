@@ -1,15 +1,20 @@
 package mygame;
 
 import javafx.geometry.Rectangle2D;
+import javafx.scene.SnapshotParameters;
+import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.paint.Color;
+import javafx.scene.transform.Rotate;
 
 public abstract class Entity {
     private int x;
     private int y;
     private int velocityX;
     private int velocityY;
-    private Image image;
+    private Image image, straightImage;
     private GameField field;
 
     public GameField getField() {
@@ -36,11 +41,13 @@ public abstract class Entity {
         this.velocityY = velocityY;
     }
 
+
     public Image getImage() {
         return image;
     }
 
     public void setImage(Image image) {
+        this.straightImage = image;
         this.image = image;
     }
 
@@ -82,5 +89,28 @@ public abstract class Entity {
     }
     public boolean intersects(Entity e) {
         return e.getBoundary().intersects(this.getBoundary());
+    }
+    public void setDirection(int dx, int dy){
+        ImageView iv = new ImageView(this.straightImage);
+        Rotate rotation = new Rotate();
+        rotation.setPivotX(0);
+        rotation.setPivotY(0);
+        if (dx == 0 && dy == 1) {
+            rotation.setAngle(90);
+        }
+        else if (dx == 0 && dy == -1){
+            rotation.setAngle(-90);
+        }
+        else if (dx == 1 && dy == 0){
+            rotation.setAngle(0);
+        }
+        else if (dx == -1 && dy == 0){
+            rotation.setAngle(-180);
+
+        }
+        iv.getTransforms().add(rotation);//Add the Rotate to the ImageView
+        SnapshotParameters params = new SnapshotParameters();
+        params.setFill(Color.TRANSPARENT);
+        this.image = iv.snapshot(params, null);
     }
 }

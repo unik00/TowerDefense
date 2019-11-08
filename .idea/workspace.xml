@@ -3,17 +3,15 @@
   <component name="ChangeListManager">
     <list default="true" id="00d4674f-65c0-4528-8370-8fc832b39f6b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TowerDefense/mygame/Direction.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/TowerDefense/mygame/Entity.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TowerDefense/mygame/Entity.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/TowerDefense/mygame/GameController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TowerDefense/mygame/GameController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TowerDefense/mygame/GameField.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TowerDefense/mygame/GameField.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/TowerDefense/mygame/enemy/Enemy.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TowerDefense/mygame/enemy/Enemy.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TowerDefense/mygame/enemy/NormalEnemy.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TowerDefense/mygame/enemy/NormalEnemy.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/TowerDefense/stage/demo.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TowerDefense/stage/demo.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mygame/Direction.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/mygame/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mygame/Entity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/mygame/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mygame/GameController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mygame/GameField.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mygame/GameField.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/mygame/enemy/Enemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mygame/enemy/Enemy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mygame/enemy/NormalEnemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mygame/enemy/NormalEnemy.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/stage/demo.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/stage/demo.txt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />

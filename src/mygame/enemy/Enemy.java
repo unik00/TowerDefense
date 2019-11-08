@@ -72,6 +72,8 @@ public class Enemy extends Entity {
                         if (topLeftX + Config.TILE_SIZE * dx[i] == e.getX()
                                 && topLeftY + Config.TILE_SIZE * dy[i] == e.getY()
                         ) {
+                            super.setDirection(dx[i], dy[i]);
+
                             super.setVelocityX(dx[i]);
                             super.setVelocityY(dy[i]);
                             super.setX(super.getX() + dx[i]);

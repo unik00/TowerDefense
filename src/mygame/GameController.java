@@ -30,8 +30,8 @@ public class GameController extends AnimationTimer {
         for(Entity e : field.getEntities()){
             if (e instanceof Enemy)
                 ((Enemy) e).move();
+            e.draw(gc);
         }
-        field.getEntities().forEach(e  -> e.draw(gc));
     }
 
     @Override
