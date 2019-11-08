@@ -23,7 +23,9 @@ public class GameController extends AnimationTimer {
 
     @Override
     public void handle(long currentNanoTime) {
-        if (lastEnemyGenerationTime == 0 || (lastEnemyGenerationTime - currentNanoTime) >= (long)100){
+        System.out.println(currentNanoTime - lastEnemyGenerationTime);
+        System.out.println("--");
+        if (lastEnemyGenerationTime == 0 || (currentNanoTime - lastEnemyGenerationTime) >= (long)1e9){
             field.addEntity(new NormalEnemy(field.getSpawnerX(), field.getSpawnerY()));
             lastEnemyGenerationTime = currentNanoTime;
         }
