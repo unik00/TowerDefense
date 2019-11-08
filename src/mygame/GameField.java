@@ -2,13 +2,7 @@ package mygame;
 
 import mygame.tile.Spawner;
 import mygame.tile.Target;
-
-import java.awt.desktop.SystemSleepEvent;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.LinkedList;
 import java.util.List;
-import java.util.concurrent.LinkedBlockingDeque;
 
 //Field quan li tat ca cac Entity cua Stage
 public class GameField {

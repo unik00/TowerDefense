@@ -44,12 +44,22 @@ public abstract class Entity {
         this.image = image;
     }
 
-    public Entity () {}
+    public Entity () {
+        velocityX = 0;
+        velocityY = 0;
+    }
     public Entity (int x, int y) {
+        velocityX = 0;
+        velocityY = 0;
         this.x = x;
         this.y = y;
     }
 
+    public Entity (int x, int y, GameField field) {
+        this.x = x;
+        this.y = y;
+        this.field = field;
+    }
     public int getX() {return x;}
     public void setX(int x) {
         this.x = x;

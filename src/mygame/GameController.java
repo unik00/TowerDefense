@@ -23,15 +23,13 @@ public class GameController extends AnimationTimer {
 
     @Override
     public void handle(long currentNanoTime) {
-        System.out.println(currentNanoTime - lastEnemyGenerationTime);
-        System.out.println("--");
-        if (lastEnemyGenerationTime == 0 || (currentNanoTime - lastEnemyGenerationTime) >= (long)1e9){
-            field.addEntity(new NormalEnemy(field.getSpawnerX(), field.getSpawnerY()));
+        if (lastEnemyGenerationTime == 0 || (currentNanoTime - lastEnemyGenerationTime) >= (long)5e9){
+            field.addEntity(new NormalEnemy(field.getSpawnerX(), field.getSpawnerY(), field));
             lastEnemyGenerationTime = currentNanoTime;
         }
         for(Entity e : field.getEntities()){
             if (e instanceof Enemy)
-                e.setX(e.getX() + 1);
+                ((Enemy) e).move();
         }
         field.getEntities().forEach(e  -> e.draw(gc));
     }
