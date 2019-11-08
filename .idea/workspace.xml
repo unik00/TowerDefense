@@ -3,14 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="00d4674f-65c0-4528-8370-8fc832b39f6b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TowerDefense/mygame/Entity.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TowerDefense/mygame/Entity.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/TowerDefense/mygame/GameController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TowerDefense/mygame/GameController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TowerDefense/mygame/GameField.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TowerDefense/mygame/GameField.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TowerDefense/mygame/GameStage.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TowerDefense/mygame/GameStage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mygame/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mygame/Entity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/mygame/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mygame/GameController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mygame/GameField.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mygame/GameField.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mygame/GameStage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mygame/GameStage.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
