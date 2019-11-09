@@ -3,13 +3,16 @@ package mygame;
 import javafx.geometry.Rectangle2D;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
+import mygame.enemy.Enemy;
 
-public abstract class Entity {
+public class Entity {
     private int x;
     private int y;
     private int velocityX;
     private int velocityY;
     private Image image;
+
+    private GameField field;
 
     public int getVelocityX() {
         return velocityX;
@@ -63,5 +66,9 @@ public abstract class Entity {
     }
     public boolean intersects(Entity e) {
         return e.getBoundary().intersects(this.getBoundary());
+    }
+
+    public int distance(Entity e) {
+        return (x - e.getX()) * (x - e.getX()) + (y - e.getY()) * (y - e.getY());
     }
 }

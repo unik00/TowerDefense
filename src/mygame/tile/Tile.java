@@ -7,7 +7,4 @@ public class Tile extends Entity {
     public Tile (int x, int y) {
         super(x, y);
     }
-    public void draw() {
-
-    }
 }

@@ -1,5 +1,7 @@
 package mygame;
 
+import mygame.enemy.Enemy;
+
 import java.util.ArrayList;
 import java.util.List;
 

@@ -26,6 +26,8 @@ public class Main extends Application {
         primaryStage.show();
         //click san sang thi se bat dau man choi moi
 
+        
+
         GameController controller = new GameController(gc);
         controller.start();
     }

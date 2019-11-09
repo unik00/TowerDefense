@@ -18,5 +18,7 @@ public class Config {
     public static final Image MOUNTAIN_IMAGE = new Image("file:src/resources/AssetsKit_2/PNG/Default size/towerDefense_tile042.png");
 
     public static final Image ENENY_NORMAL = new Image("file:src/resources/AssetsKit_2/PNG/Default size/towerDefense_tile270.png");
+
+    public static final Image TOWER_NORMAL = new Image("file:src/resources/AssetsKit_2/PNG/Default size/towerDefense_tile226.png");
 }
 

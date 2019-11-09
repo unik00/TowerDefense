@@ -1,10 +1,15 @@
 package mygame.tile.tower;
+import javafx.scene.image.Image;
 import mygame.tile.Tile;
 
 public class Tower extends Tile {
     private int attackSpeed;
     private int attackRange;
     private int damage;
+    private Image gun;
+
+    public Tower() {}
+    public Tower(int x, int y) { super(x, y); }
 
     public int getAttackSpeed() {
         return attackSpeed;
@@ -28,8 +33,5 @@ public class Tower extends Tile {
 
     public void setDamage(int damage) {
         this.damage = damage;
-    }
-    public void draw(){
-
     }
 }
