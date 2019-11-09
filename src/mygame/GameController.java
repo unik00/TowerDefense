@@ -28,6 +28,17 @@ public class GameController extends AnimationTimer {
 
     @Override
     public void handle(long currentNanoTime) {
+        for(Entity e : field.getEntities( )){
+            if (e instanceof Bullet){
+                e.setX((int)((Bullet) e).calculateCurrentPositionX(currentNanoTime));
+                e.setY((int)((Bullet) e).calculateCurrentPositionY(currentNanoTime));
+              //  System.out.print(e.getX());
+           //     System.out.print(" ");
+            //    System.out.println(e.getY());
+            }
+            e.draw(gc);
+        }
+
         //ENEMY PART
         if (lastEnemyGenerationTime == 0 || (currentNanoTime - lastEnemyGenerationTime) >= (long)10e9){
             field.addEntity(new NormalEnemy(field.getSpawnerX(), field.getSpawnerY(), field));
@@ -48,22 +59,31 @@ public class GameController extends AnimationTimer {
                     ((Tower) t).setLastBulletGenerationTime(currentNanoTime);
 
                     //find nearest enemy
-                    Enemy nearestEnemy = new Enemy(10000, 10000);      //non-exist Enemy
+                    Enemy nearestEnemy = null;      //non-exist Enemy
                     for (Entity e : field.getEntities()) {
                         if (e instanceof Enemy)
-                            if (t.distance(e) <= ((Tower) t).getAttackRange() && t.distance(e) < t.distance(nearestEnemy))
+                            if (nearestEnemy == null ||
+                                    (t.distance(e) <= ((Tower) t).getAttackRange() && t.distance(e) < t.distance(nearestEnemy)))
                                 nearestEnemy = (Enemy) e;
                     }
+                    if (nearestEnemy == null) continue;
                     if (t.distance(nearestEnemy) > ((Tower) t).getAttackRange()) continue;
 
                     //create a bullet
+                    /*
                     System.out.print("Fired a bullet at time: ");
                     System.out.println(currentNanoTime);
-                    Bullet tmp = new Bullet(t.getX(), t.getY(), ((Tower) t).getDamage());
+                    System.out.println(nearestEnemy.getX());
+                    System.out.println(nearestEnemy.getY());
+                    */
+                    Bullet tmp = new Bullet(t.getX(), t.getY(), (Tower) t, nearestEnemy, currentNanoTime);
+
                     createdBullet.add(tmp);
                 }
         }
-        for (Bullet b : createdBullet) field.getEntities().add(b);
+        for (Bullet b : createdBullet) {
+            field.getEntities().add(b);
+        }
     }
 
     @Override
