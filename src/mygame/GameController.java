@@ -1,23 +1,29 @@
 package mygame;
 
 import javafx.animation.AnimationTimer;
-import javafx.application.Application;
+import javafx.event.EventHandler;
+import javafx.scene.Group;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
-import javafx.stage.Stage;
+import javafx.scene.image.ImageView;
+import javafx.scene.input.ClipboardContent;
+import javafx.scene.input.Dragboard;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.input.TransferMode;
 import mygame.enemy.Enemy;
 import mygame.enemy.NormalEnemy;
-import mygame.tile.tower.NormalTower;
+import mygame.tile.Mountain;
 import mygame.tile.tower.Tower;
-
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
+import javafx.scene.shape.Rectangle;
 
 public class GameController extends AnimationTimer {
     private GameField field;
     private GameStage stage;
     private GraphicsContext gc;
+    private List<Tower> sampleTower = new ArrayList<Tower>();
     private final long startNanoTime = System.nanoTime();
     private long lastEnemyGenerationTime = 0;
 
@@ -26,9 +32,25 @@ public class GameController extends AnimationTimer {
         this.gc = gc;
     }
 
+    public GameField getField() {
+        return field;
+    }
+
+    public void setField(GameField field) {
+        this.field = field;
+    }
+
+    public GameStage getStage() {
+        return stage;
+    }
+
+    public void setStage(GameStage stage) {
+        this.stage = stage;
+    }
+
     @Override
     public void handle(long currentNanoTime) {
-        //ENEMY PART
+        //ENEMY MOVING
         if (lastEnemyGenerationTime == 0 || (currentNanoTime - lastEnemyGenerationTime) >= (long)2e9){
             field.addEntity(new NormalEnemy(field.getSpawnerX(), field.getSpawnerY(), field));
             lastEnemyGenerationTime = currentNanoTime;
@@ -39,7 +61,7 @@ public class GameController extends AnimationTimer {
             e.draw(gc);
         }
 
-        //TOWER PART
+        //TOWER MOVING
         List<Bullet> createdBullet = new ArrayList<Bullet>();
         for (Entity t : field.getEntities()) {
             if (t instanceof Tower)
@@ -61,6 +83,14 @@ public class GameController extends AnimationTimer {
                 }
         }
         for (Bullet b : createdBullet) field.getEntities().add((Entity) b);
+
+        //DRAG && DROP PROCESSING
+
+
+        for (Entity e : field.getEntities())
+            if (e instanceof Mountain) {
+
+            }
     }
 
     @Override
