@@ -29,7 +29,7 @@ public class GameController extends AnimationTimer {
     @Override
     public void handle(long currentNanoTime) {
         //ENEMY PART
-        if (lastEnemyGenerationTime == 0 || (currentNanoTime - lastEnemyGenerationTime) >= (long)2e9){
+        if (lastEnemyGenerationTime == 0 || (currentNanoTime - lastEnemyGenerationTime) >= (long)10e9){
             field.addEntity(new NormalEnemy(field.getSpawnerX(), field.getSpawnerY(), field));
             lastEnemyGenerationTime = currentNanoTime;
         }
@@ -57,10 +57,13 @@ public class GameController extends AnimationTimer {
                     if (t.distance(nearestEnemy) > ((Tower) t).getAttackRange()) continue;
 
                     //create a bullet
-                    createdBullet.add(new Bullet(t.getX(), t.getY(), ((Tower) t).getDamage()));
+                    System.out.print("Fired a bullet at time: ");
+                    System.out.println(currentNanoTime);
+                    Bullet tmp = new Bullet(t.getX(), t.getY(), ((Tower) t).getDamage());
+                    createdBullet.add(tmp);
                 }
         }
-        for (Bullet b : createdBullet) field.getEntities().add((Entity) b);
+        for (Bullet b : createdBullet) field.getEntities().add(b);
     }
 
     @Override

@@ -12,8 +12,7 @@ import javafx.scene.transform.Rotate;
 public abstract class Entity {
     private int x;
     private int y;
-    private int velocityX;
-    private int velocityY;
+
     private Image image, straightImage;
     private GameField field;
 
@@ -25,23 +24,6 @@ public abstract class Entity {
         this.field = field;
     }
 
-    public int getVelocityX() {
-        return velocityX;
-    }
-
-    public void setVelocityX(int velocityX) {
-        this.velocityX = velocityX;
-    }
-
-    public int getVelocityY() {
-        return velocityY;
-    }
-
-    public void setVelocityY(int velocityY) {
-        this.velocityY = velocityY;
-    }
-
-
     public Image getImage() {
         return image;
     }
@@ -52,12 +34,8 @@ public abstract class Entity {
     }
 
     public Entity () {
-        velocityX = 0;
-        velocityY = 0;
     }
     public Entity (int x, int y) {
-        velocityX = 0;
-        velocityY = 0;
         this.x = x;
         this.y = y;
     }

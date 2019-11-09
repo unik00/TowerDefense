@@ -1,5 +1,6 @@
 package mygame.enemy;
 
+import mygame.Bullet;
 import mygame.Config;
 import mygame.Entity;
 import mygame.GameField;
@@ -10,6 +11,22 @@ import mygame.tile.Target;
 public class Enemy extends Entity {
     static private int dx[] = {0, 0, -1, 1};
     static private int dy[] = {-1, 1, 0, 0};
+
+    private int velocityX;
+    private int velocityY;
+
+    public int getVelocityX() {
+        return velocityX;
+    }
+    public void setVelocityX(int velocityX) {
+        this.velocityX = velocityX;
+    }
+    public int getVelocityY() {
+        return velocityY;
+    }
+    public void setVelocityY(int velocityY) {
+        this.velocityY = velocityY;
+    }
 
     private int hitPoint;
     private int speed;
@@ -58,24 +75,29 @@ public class Enemy extends Entity {
         this.reward = reward;
     }
 
+    public boolean gotShot(Bullet b){
+
+        return false;
+    }
     public void move() {
+
         if (super.getX() % Config.TILE_SIZE == 0 && super.getY() % Config.TILE_SIZE == 0) {
             boolean broken = false;
+            int topLeftX = super.getX() / Config.TILE_SIZE * Config.TILE_SIZE;
+            int topLeftY = super.getY() / Config.TILE_SIZE * Config.TILE_SIZE;
 
             for (int i = 0; i < 4 && !broken; ++i) {
                 if (dx[i] == -getVelocityX() && dy[i] == -getVelocityY())
                     continue;
                 for (Entity e : super.getField().getEntities())
                     if (e instanceof Road) {
-                        int topLeftX = super.getX() / Config.TILE_SIZE * Config.TILE_SIZE;
-                        int topLeftY = super.getY() / Config.TILE_SIZE * Config.TILE_SIZE;
                         if (topLeftX + Config.TILE_SIZE * dx[i] == e.getX()
                                 && topLeftY + Config.TILE_SIZE * dy[i] == e.getY()
                         ) {
                             super.setDirection(dx[i], dy[i]);
 
-                            super.setVelocityX(dx[i]);
-                            super.setVelocityY(dy[i]);
+                            setVelocityX(dx[i]);
+                            setVelocityY(dy[i]);
                             super.setX(super.getX() + dx[i]);
                             super.setY(super.getY() + dy[i]);
                             broken = true;
@@ -86,8 +108,8 @@ public class Enemy extends Entity {
         }
         else {
             // if not in the intersection of grid, continue going
-            super.setX(super.getX() + super.getVelocityX());
-            super.setY(super.getY() + super.getVelocityY());
+            super.setX(super.getX() + getVelocityX());
+            super.setY(super.getY() + getVelocityY());
         }
     }
 }

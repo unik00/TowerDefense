@@ -23,7 +23,7 @@ public class Config {
 
     public static final Image TOWER_NORMAL = new Image("file:src/resources/AssetsKit_2/PNG/Default size/towerDefense_tile226.png");
     public static final int TOWER_NORMAL_ATTACKSPEED = 1;
-    public static final int TOWER_NORMAL_ATTACKRANGE = 5 * TILE_SIZE;
+    public static final int TOWER_NORMAL_ATTACKRANGE = 3 * TILE_SIZE;
     public static final int TOWER_NORMAL_DAMAGE = 1;
 
     public static final Image BULLET_IMAGE = new Image("file:src/resources/AssetsKit_2/PNG/Default size/towerDefense_tile272.png");
