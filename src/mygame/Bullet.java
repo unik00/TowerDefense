@@ -1,35 +1,20 @@
 package mygame;
 
+import javafx.scene.image.Image;
+
 public class Bullet extends Entity {
-    private int speed;
-    private int range;
     private int damage;
-
-    public int getSpeed() {
-        return speed;
+    public Bullet () {}
+    public Bullet (int x, int y, int damage) {
+        super(x, y);
+        this.damage = damage;
+        setImage(Config.BULLET_IMAGE);
     }
-
-    public void setSpeed(int speed) {
-        this.speed = speed;
-    }
-
-    public int getRange() {
-        return range;
-    }
-
-    public void setRange(int range) {
-        this.range = range;
-    }
-
     public int getDamage() {
         return damage;
     }
 
     public void setDamage(int damage) {
         this.damage = damage;
-    }
-
-    public void draw() {
-
     }
 }

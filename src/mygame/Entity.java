@@ -113,4 +113,8 @@ public abstract class Entity {
         params.setFill(Color.TRANSPARENT);
         this.image = iv.snapshot(params, null);
     }
+
+    public int distance(Entity e) {
+        return (int) Math.sqrt((x - e.getX()) * (x - e.getX()) + (y - e.getY()) * (y - e.getY()));
+    }
 }
