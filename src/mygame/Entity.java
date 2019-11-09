@@ -12,6 +12,15 @@ import javafx.scene.transform.Rotate;
 public abstract class Entity {
     private int x;
     private int y;
+    private boolean alive = true;
+
+    public boolean isAlive() {
+        return alive;
+    }
+
+    public void setAlive(boolean alive) {
+        this.alive = alive;
+    }
 
     private Image image, straightImage;
     private GameField field;

@@ -30,7 +30,7 @@ public class GameController extends AnimationTimer {
     public void handle(long currentNanoTime) {
 
         //ENEMY PART
-        if (lastEnemyGenerationTime == 0 || (currentNanoTime - lastEnemyGenerationTime) >= (long)10e9){
+        if (lastEnemyGenerationTime == 0 || (currentNanoTime - lastEnemyGenerationTime) >= (long)1e9){
             field.addEntity(new NormalEnemy(field.getSpawnerX(), field.getSpawnerY(), field));
             lastEnemyGenerationTime = currentNanoTime;
         }
@@ -51,7 +51,7 @@ public class GameController extends AnimationTimer {
                     //find nearest enemy
                     Enemy nearestEnemy = null;      //non-exist Enemy
                     for (Entity e : field.getEntities()) {
-                        if (e instanceof Enemy)
+                        if (e instanceof Enemy && ((Enemy)e).isAlive())
                             if (nearestEnemy == null ||
                                     (t.distance(e) <= ((Tower) t).getAttackRange() && t.distance(e) < t.distance(nearestEnemy)))
                                 nearestEnemy = (Enemy) e;
@@ -79,7 +79,10 @@ public class GameController extends AnimationTimer {
         for (Bullet b : createdBullet) {
             field.getEntities().add(b);
         }
-        for(Entity e : field.getEntities( )){
+        for(Entity e : field.getEntities( )) if (e.isAlive()){
+            if (e instanceof Enemy){
+                ((Enemy) e).checkHitByBulletAndRemove(currentNanoTime);
+            }
             if (e instanceof Bullet){
                 e.setX((int)((Bullet) e).calculateCurrentPositionX(currentNanoTime));
                 e.setY((int)((Bullet) e).calculateCurrentPositionY(currentNanoTime));

@@ -2,7 +2,7 @@ package mygame.tile.tower;
 import mygame.tile.Tile;
 
 public class Tower extends Tile {
-    private int attackSpeed;
+    private double attackSpeed;
     private int attackRange;
     private int damage;
     private long lastBulletGenerationTime;
@@ -13,11 +13,11 @@ public class Tower extends Tile {
         lastBulletGenerationTime = 0;
     }
 
-    public int getAttackSpeed() {
+    public double getAttackSpeed() {
         return attackSpeed;
     }
 
-    public void setAttackSpeed(int attackSpeed) {
+    public void setAttackSpeed(double attackSpeed) {
         this.attackSpeed = attackSpeed;
     }
 

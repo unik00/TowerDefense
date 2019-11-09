@@ -15,6 +15,7 @@ public class Enemy extends Entity {
     private int velocityX;
     private int velocityY;
 
+
     public int getVelocityX() {
         return velocityX;
     }
@@ -75,12 +76,33 @@ public class Enemy extends Entity {
         this.reward = reward;
     }
 
-    public boolean gotShot(Bullet b){
-
+    public boolean checkCollisionWithBullet(Bullet b, long currentNanoSecond){
+        double x = b.calculateCurrentPositionX(currentNanoSecond);
+        double y = b.calculateCurrentPositionY(currentNanoSecond);
+        int topLeftX = super.getX() / Config.TILE_SIZE * Config.TILE_SIZE;
+        int topLeftY = super.getY() / Config.TILE_SIZE * Config.TILE_SIZE;
+        if (x >= topLeftX && x < topLeftX+Config.TILE_SIZE && y>=topLeftY&&y<topLeftY+Config.TILE_SIZE){
+            return true;
+        }
+        return false;
+    }
+    public boolean checkHitByBulletAndRemove(long currentNanoSecond){
+        for(Entity e : super.getField().getEntities()){
+            if (e instanceof Bullet && e.isAlive()){
+                if (checkCollisionWithBullet((Bullet)e, currentNanoSecond)){
+                    super.setAlive(false);
+                    e.setAlive(false);
+                    return true;
+                }
+            }
+        }
         return false;
     }
     public void move() {
-
+        if (super.getX()==getField().getTargetX() && super.getY()==getField().getTargetY()){
+            super.setAlive(false);
+        }
+        // TODO: add speed
         if (super.getX() % Config.TILE_SIZE == 0 && super.getY() % Config.TILE_SIZE == 0) {
             boolean broken = false;
             int topLeftX = super.getX() / Config.TILE_SIZE * Config.TILE_SIZE;
