@@ -4,7 +4,9 @@
     <list default="true" id="bd3eafc2-6d0b-4278-b814-3ee8f7522339" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/TowerDefense/mygame/Bullet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TowerDefense/mygame/Bullet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TowerDefense/mygame/Config.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TowerDefense/mygame/Config.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/TowerDefense/mygame/GameController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TowerDefense/mygame/GameController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TowerDefense/mygame/tile/tower/NormalTower.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TowerDefense/mygame/tile/tower/NormalTower.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/mygame/Bullet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mygame/Bullet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/mygame/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mygame/GameController.java" afterDir="false" />
     </list>
