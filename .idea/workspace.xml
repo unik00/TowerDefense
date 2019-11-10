@@ -2,11 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3601f795-6434-425d-9054-36e1c81a5dcc" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/out/production/TowerDefense/mygame/Bullet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TowerDefense/mygame/Bullet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TowerDefense/mygame/enemy/NormalEnemy.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TowerDefense/mygame/enemy/NormalEnemy.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TowerDefense/mygame/GameController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TowerDefense/mygame/GameController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TowerDefense/mygame/enemy/Enemy.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TowerDefense/mygame/enemy/Enemy.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/mygame/Bullet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mygame/Bullet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mygame/enemy/Enemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mygame/enemy/Enemy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mygame/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mygame/GameController.java" afterDir="false" />
     </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -15,6 +17,7 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="ProjectId" id="1TR5uf4O0CyQCaRCF9x9iLUUnTr" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
@@ -54,6 +57,13 @@
     <configuration />
   </component>
   <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3601f795-6434-425d-9054-36e1c81a5dcc" name="Default Changelist" comment="" />
+      <created>1573410300371</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1573410300371</updated>
+    </task>
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -61,7 +71,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>

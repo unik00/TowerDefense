@@ -59,15 +59,20 @@ public class Bullet extends Entity {
         System.out.print("source Y: ");
         System.out.println(this.sourceY);
 */
-        System.out.print("k: "); System.out.println(directionY/directionX);
-        double k = directionY / directionX;
-        if (k>=0){
-            degree = Math.atan(k)*180/Math.PI;
-            if (directionX < 0) degree -= 180;
+
+        if (directionX == 0) {
+            if (directionY < 0) degree = -90;
+            else degree = 90;
         }
-        else if (k<0){
-            degree = 180 - Math.atan(-k)*180/Math.PI;
-            if (directionX > 0) degree -= 180;
+        else {
+            double k = directionY / directionX;
+            if (k >= 0) {
+                degree = Math.atan(k) * 180 / Math.PI;
+                if (directionX < 0) degree -= 180;
+            } else if (k < 0) {
+                degree = 180 - Math.atan(-k) * 180 / Math.PI;
+                if (directionX > 0) degree -= 180;
+            }
         }
         double normalisingConstant = Math.sqrt(directionY*directionY+directionX*directionX);
         directionX /= normalisingConstant;
