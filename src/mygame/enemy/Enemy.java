@@ -1,14 +1,20 @@
 package mygame.enemy;
 
+import javafx.scene.SnapshotParameters;
 import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.image.ImageView;
 import javafx.scene.paint.Color;
+import javafx.scene.transform.Rotate;
 import mygame.Bullet;
 import mygame.Config;
 import mygame.Entity;
 import mygame.GameField;
 import mygame.tile.Road;
+import javafx.scene.image.Image;
 import mygame.tile.Spawner;
 import mygame.tile.Target;
+
+import java.awt.*;
 
 public class Enemy extends Entity {
     static private int dx[] = {0, 0, -1, 1};
@@ -16,7 +22,16 @@ public class Enemy extends Entity {
 
     private int velocityX;
     private int velocityY;
+    private Image shadow, straightShadow;
 
+    public void setShadow(Image shadow) {
+        this.shadow = shadow;
+        this.straightShadow = shadow;
+    }
+
+    public Image getShadow() {
+        return shadow;
+    }
 
     public int getVelocityX() {
         return velocityX;
@@ -128,7 +143,7 @@ public class Enemy extends Entity {
                         if (topLeftX + Config.TILE_SIZE * dx[i] == e.getX()
                                 && topLeftY + Config.TILE_SIZE * dy[i] == e.getY()
                         ) {
-                            super.setDirection(dx[i], dy[i]);
+                            setDirection(dx[i], dy[i]);
                             setVelocityX(dx[i]);
                             setVelocityY(dy[i]);
                             super.setX(super.getX() + dx[i]);
@@ -146,10 +161,39 @@ public class Enemy extends Entity {
         }
     }
 
+    public void setDirection(int dx, int dy){
+        super.setDirection(dx, dy);
+        System.out.println("?");
+        ImageView iv = new ImageView(straightShadow);
+        Rotate rotation = new Rotate();
+        rotation.setPivotX(0);
+        rotation.setPivotY(0);
+        if (dx == 0 && dy == 1) {
+            rotation.setAngle(90);
+        }
+        else if (dx == 0 && dy == -1){
+            rotation.setAngle(-90);
+        }
+        else if (dx == 1 && dy == 0){
+            rotation.setAngle(0);
+        }
+        else if (dx == -1 && dy == 0){
+            rotation.setAngle(-180);
+        }
+        iv.getTransforms().add(rotation);
+        SnapshotParameters params = new SnapshotParameters();
+        params.setFill(Color.TRANSPARENT);
+        this.shadow = iv.snapshot(params, null);
+    }
+
     public void draw(GraphicsContext gc){
-        // draw HP bar
+        // draw shadow
+        gc.drawImage(shadow, super.getX()-Config.TILE_SIZE/3.0, super.getY()+Config.TILE_SIZE/4.0);
+
+        // draw main
         super.draw(gc);
 
+        // draw HP bar
         double barX = super.getX()+0.2*Config.TILE_SIZE;
         double barY = super.getY();
         double barW = Config.TILE_SIZE - 0.4*Config.TILE_SIZE;

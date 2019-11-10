@@ -20,6 +20,8 @@ public class Config {
     public static final Image TARGET_IMAGE = new Image("file:src/resources/AssetsKit_2/PNG/Default size/towerDefense_tile110.png");
 
     public static final Image ENEMY_NORMAL = new Image("file:src/resources/AssetsKit_2/PNG/Default size/towerDefense_tile270.png");
+    public static final Image ENEMY_NORMAL_SHADOW =
+            new Image("file:src/resources/AssetsKit_2/PNG/Default size/towerDefense_tile293.png");
 
 
     public static final Image TOWER_NORMAL_IMAGE = new Image("file:src/resources/AssetsKit_2/PNG/Default size/towerDefense_tile226.png");
