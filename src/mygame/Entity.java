@@ -42,6 +42,10 @@ public abstract class Entity {
         this.image = image;
     }
 
+    public Image getStraightImage() {
+        return straightImage;
+    }
+
     public Entity () {
     }
     public Entity (int x, int y) {
@@ -79,23 +83,26 @@ public abstract class Entity {
     }
     public void setDirection(int dx, int dy){
         ImageView iv = new ImageView(this.straightImage);
-        Rotate rotation = new Rotate();
-        rotation.setPivotX(0);
-        rotation.setPivotY(0);
         if (dx == 0 && dy == 1) {
-            rotation.setAngle(90);
+            iv.setRotate(90);
         }
         else if (dx == 0 && dy == -1){
-            rotation.setAngle(-90);
+            iv.setRotate(-90);
         }
         else if (dx == 1 && dy == 0){
-            rotation.setAngle(0);
+            iv.setRotate(0);
         }
         else if (dx == -1 && dy == 0){
-            rotation.setAngle(-180);
+            iv.setRotate(-180);
 
         }
-        iv.getTransforms().add(rotation);//Add the Rotate to the ImageView
+        SnapshotParameters params = new SnapshotParameters();
+        params.setFill(Color.TRANSPARENT);
+        this.image = iv.snapshot(params, null);
+    }
+    public void setDirection(double degree){
+        ImageView iv = new ImageView(this.straightImage);
+        iv.setRotate(degree);
         SnapshotParameters params = new SnapshotParameters();
         params.setFill(Color.TRANSPARENT);
         this.image = iv.snapshot(params, null);

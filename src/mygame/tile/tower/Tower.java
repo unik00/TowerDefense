@@ -1,4 +1,6 @@
 package mygame.tile.tower;
+import mygame.Bullet;
+import mygame.enemy.Enemy;
 import mygame.tile.Tile;
 
 public class Tower extends Tile {
@@ -43,5 +45,13 @@ public class Tower extends Tile {
 
     public void setLastBulletGenerationTime(long lastBulletGenerationTime) {
         this.lastBulletGenerationTime = lastBulletGenerationTime;
+    }
+
+//    Bullet tmp = new Bullet(t.getX(), t.getY(), (Tower) t, nearestEnemy, currentNanoTime);
+    public Bullet fire(Enemy target, long currentNanoTime){
+        Bullet shot = new Bullet(super.getX(),super.getY(),this,target,currentNanoTime);
+        System.out.println(shot.getDegree());
+        super.setDirection(shot.getDegree());
+        return shot;
     }
 }

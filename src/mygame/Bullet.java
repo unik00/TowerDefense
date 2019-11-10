@@ -28,6 +28,15 @@ public class Bullet extends Entity {
         this.firedTime = firedTime;
     }
     public Bullet () {}
+
+    public double getDirectionX() {
+        return directionX;
+    }
+
+    public double getDirectionY() {
+        return directionY;
+    }
+
     public Bullet (int x, int y, Tower source, Enemy target, long firedTime) {
         super(x, y);
         this.damage = source.getDamage();
@@ -40,7 +49,7 @@ public class Bullet extends Entity {
         this.directionX = this.targetX - this.sourceX;
         this.directionY = this.targetY - this.sourceY;
 
-        /*
+
         System.out.print("target X: ");
         System.out.println(this.targetX);
         System.out.print("target Y: ");
@@ -49,13 +58,27 @@ public class Bullet extends Entity {
         System.out.println(this.sourceX);
         System.out.print("source Y: ");
         System.out.println(this.sourceY);
-         */
 
+        System.out.print("k: "); System.out.println(directionY/directionX);
+        double k = directionY / directionX;
+        if (k>=0){
+            degree = Math.atan(k)*180/Math.PI;
+            if (directionX < 0) degree -= 180;
+        }
+        else if (k<0){
+            degree = 180 - Math.atan(-k)*180/Math.PI;
+            if (directionX > 0) degree -= 180;
+        }
         double normalisingConstant = Math.sqrt(directionY*directionY+directionX*directionX);
         directionX /= normalisingConstant;
         directionY /= normalisingConstant;
         setImage(Config.BULLET_IMAGE);
     }
+
+    public double getDegree() {
+        return degree;
+    }
+
     public double calculateCurrentPositionX(long currentTime){
         long elapsedTime = currentTime - firedTime;
         return (sourceX + directionX * elapsedTime * (speed * BULLET_SPEED_UNIT * 1e-9));

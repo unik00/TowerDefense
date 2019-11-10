@@ -49,9 +49,6 @@ public class GameStage {
                 }
             }
         }
-        NormalTower gun = new NormalTower(5 * 64, 3 * 64);
-        gun.setDamage(5);
-        entities.add(gun);
         return new GameStage(entities);
     }
 }
