@@ -4,6 +4,7 @@ import mygame.tile.Mountain;
 import mygame.tile.Road;
 import mygame.tile.Spawner;
 import mygame.tile.Target;
+import mygame.tile.tower.NormalTower;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -48,6 +49,9 @@ public class GameStage {
                 }
             }
         }
+        NormalTower gun = new NormalTower(5 * 64, 3 * 64);
+        gun.setDamage(5);
+        entities.add(gun);
         return new GameStage(entities);
     }
 }

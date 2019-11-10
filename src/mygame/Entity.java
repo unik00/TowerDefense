@@ -12,8 +12,16 @@ import javafx.scene.transform.Rotate;
 public abstract class Entity {
     private int x;
     private int y;
-    private int velocityX;
-    private int velocityY;
+    private boolean alive = true;
+
+    public boolean isAlive() {
+        return alive;
+    }
+
+    public void setAlive(boolean alive) {
+        this.alive = alive;
+    }
+
     private Image image, straightImage;
     private GameField field;
 
@@ -25,23 +33,6 @@ public abstract class Entity {
         this.field = field;
     }
 
-    public int getVelocityX() {
-        return velocityX;
-    }
-
-    public void setVelocityX(int velocityX) {
-        this.velocityX = velocityX;
-    }
-
-    public int getVelocityY() {
-        return velocityY;
-    }
-
-    public void setVelocityY(int velocityY) {
-        this.velocityY = velocityY;
-    }
-
-
     public Image getImage() {
         return image;
     }
@@ -52,12 +43,8 @@ public abstract class Entity {
     }
 
     public Entity () {
-        velocityX = 0;
-        velocityY = 0;
     }
     public Entity (int x, int y) {
-        velocityX = 0;
-        velocityY = 0;
         this.x = x;
         this.y = y;
     }
@@ -112,5 +99,9 @@ public abstract class Entity {
         SnapshotParameters params = new SnapshotParameters();
         params.setFill(Color.TRANSPARENT);
         this.image = iv.snapshot(params, null);
+    }
+
+    public int distance(Entity e) {
+        return (int) Math.sqrt((x - e.getX()) * (x - e.getX()) + (y - e.getY()) * (y - e.getY()));
     }
 }
