@@ -7,7 +7,7 @@ import mygame.tile.Tile;
 public class Tower extends Tile {
     private double attackSpeed;
     private int attackRange;
-    private int damage;
+    private int damage = 1;
     private long lastBulletGenerationTime;
 
     public Tower() {}

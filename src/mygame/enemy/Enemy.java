@@ -1,5 +1,7 @@
 package mygame.enemy;
 
+import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.paint.Color;
 import mygame.Bullet;
 import mygame.Config;
 import mygame.Entity;
@@ -27,6 +29,12 @@ public class Enemy extends Entity {
     }
     public void setVelocityY(int velocityY) {
         this.velocityY = velocityY;
+    }
+
+    private int maximumHitPoint;
+
+    public void setMaximumHitPoint(int maximumHitPoint) {
+        this.maximumHitPoint = maximumHitPoint;
     }
 
     private int hitPoint;
@@ -90,8 +98,12 @@ public class Enemy extends Entity {
         for(Entity e : super.getField().getEntities()){
             if (e instanceof Bullet && e.isAlive()){
                 if (checkCollisionWithBullet((Bullet)e, currentNanoSecond)){
-                    super.setAlive(false);
+                    hitPoint -= ((Bullet) e).getDamage();
+                    if (hitPoint == 0){
+                        super.setAlive(false);
+                    }
                     e.setAlive(false);
+                    assert hitPoint >= 0;
                     return true;
                 }
             }
@@ -132,6 +144,22 @@ public class Enemy extends Entity {
             super.setX(super.getX() + getVelocityX());
             super.setY(super.getY() + getVelocityY());
         }
+    }
+
+    public void draw(GraphicsContext gc){
+        // draw HP bar
+        super.draw(gc);
+
+        double barX = super.getX()+0.2*Config.TILE_SIZE;
+        double barY = super.getY();
+        double barW = Config.TILE_SIZE - 0.4*Config.TILE_SIZE;
+        double barH = 4;
+        gc.setFill(Color.GREY);
+        gc.fillRect(barX, barY, barW, barH);
+        gc.setFill(Color.ORANGERED);
+        double hitPointPercentage = hitPoint*1.0 / maximumHitPoint;
+        gc.fillRect(barX, barY, hitPointPercentage*barW, barH);
+
     }
 }
 

@@ -2,24 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3601f795-6434-425d-9054-36e1c81a5dcc" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TowerDefense/mygame/Config.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TowerDefense/mygame/Config.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TowerDefense/mygame/Main$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TowerDefense/mygame/Main$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TowerDefense/mygame/Main$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TowerDefense/mygame/Main$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TowerDefense/mygame/Main$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TowerDefense/mygame/Main$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TowerDefense/mygame/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TowerDefense/mygame/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TowerDefense/mygame/tile/tower/MachineGunTower.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TowerDefense/mygame/tile/tower/MachineGunTower.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TowerDefense/mygame/tile/tower/NormalTower.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TowerDefense/mygame/tile/tower/NormalTower.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TowerDefense/mygame/tile/tower/SniperTower.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TowerDefense/mygame/tile/tower/SniperTower.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TowerDefense/mygame/GameController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TowerDefense/mygame/GameController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TowerDefense/mygame/enemy/Enemy.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TowerDefense/mygame/enemy/Enemy.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TowerDefense/mygame/enemy/NormalEnemy.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TowerDefense/mygame/enemy/NormalEnemy.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/TowerDefense/mygame/tile/tower/Tower.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TowerDefense/mygame/tile/tower/Tower.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mygame/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mygame/Config.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/mygame/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mygame/GameController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mygame/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mygame/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mygame/tile/tower/MachineGunTower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mygame/tile/tower/MachineGunTower.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mygame/tile/tower/NormalTower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mygame/tile/tower/NormalTower.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mygame/tile/tower/SniperTower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mygame/tile/tower/SniperTower.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mygame/enemy/Enemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mygame/enemy/Enemy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mygame/enemy/NormalEnemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mygame/enemy/NormalEnemy.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/mygame/tile/tower/Tower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mygame/tile/tower/Tower.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -70,5 +60,16 @@
   </component>
   <component name="TaskManager">
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

@@ -61,7 +61,7 @@ public class GameController extends AnimationTimer {
         }
 
         //ENEMY MOVING
-        if (lastEnemyGenerationTime == 0 || (currentNanoTime - lastEnemyGenerationTime) >= (long)1e6){
+        if (lastEnemyGenerationTime == 0 || (currentNanoTime - lastEnemyGenerationTime) >= (long)2e9){
             field.addEntity(new NormalEnemy(field.getSpawnerX(), field.getSpawnerY(), field));
             lastEnemyGenerationTime = currentNanoTime;
         }
@@ -75,7 +75,7 @@ public class GameController extends AnimationTimer {
         for (Entity t : field.getEntities()) {
             if (t instanceof Tower)
                 //if it's time to fire
-                if ( currentNanoTime - ((Tower) t).getLastBulletGenerationTime() > (long) 1e8 / ((Tower) t).getAttackSpeed()) {
+                if ( currentNanoTime - ((Tower) t).getLastBulletGenerationTime() > (long) 1e9 / ((Tower) t).getAttackSpeed()) {
                     ((Tower) t).setLastBulletGenerationTime(currentNanoTime);
 
                     //find nearest enemy
