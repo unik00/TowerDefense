@@ -40,7 +40,7 @@ public class Bullet extends Entity {
     public Bullet (int x, int y, Tower source, Enemy target, long firedTime) {
         super(x, y);
         this.damage = source.getDamage();
-        this.speed = 5;
+        this.speed = 3;
         this.firedTime = firedTime;
         this.targetX = target.getX();// + Config.TILE_SIZE / 2.0;
         this.targetY = target.getY();// + Config.TILE_SIZE / 2.0; // aim the center of enemy

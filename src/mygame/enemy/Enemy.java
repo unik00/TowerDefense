@@ -186,14 +186,7 @@ public class Enemy extends Entity {
         this.shadow = iv.snapshot(params, null);
     }
 
-    public void draw(GraphicsContext gc){
-        // draw shadow
-        gc.drawImage(shadow, super.getX()-Config.TILE_SIZE/3.0, super.getY()+Config.TILE_SIZE/4.0);
-
-        // draw main
-        super.draw(gc);
-
-        // draw HP bar
+    private void drawHPBar(GraphicsContext gc){
         double barX = super.getX()+0.2*Config.TILE_SIZE;
         double barY = super.getY();
         double barW = Config.TILE_SIZE - 0.4*Config.TILE_SIZE;
@@ -204,6 +197,16 @@ public class Enemy extends Entity {
         double hitPointPercentage = hitPoint*1.0 / maximumHitPoint;
         gc.fillRect(barX, barY, hitPointPercentage*barW, barH);
 
+    }
+    public void draw(GraphicsContext gc){
+        // draw shadow
+        gc.drawImage(shadow, super.getX()-Config.TILE_SIZE/3.0, super.getY()+Config.TILE_SIZE/4.0);
+
+        // draw main
+        super.draw(gc);
+
+        // draw HP bar
+        drawHPBar(gc);
     }
 }
 
