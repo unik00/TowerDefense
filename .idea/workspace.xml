@@ -1,30 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="00d4674f-65c0-4528-8370-8fc832b39f6b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/mygame/Bullet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/mygame/Entity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/mygame/Field.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/mygame/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/mygame/Stage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/mygame/enemy/BossEnemy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/mygame/enemy/Enemy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/mygame/enemy/NormalEnemy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/mygame/enemy/SmallerEnemy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/mygame/enemy/TankerEnemy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/mygame/tile/Moutain.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/mygame/tile/Road.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/mygame/tile/Spawner.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/mygame/tile/Target.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/mygame/tile/Tile.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/mygame/tile/tower/MachineGunTower.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/mygame/tile/tower/NormalTower.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/mygame/tile/tower/SniperTower.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/mygame/tile/tower/Tower.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="bd3eafc2-6d0b-4278-b814-3ee8f7522339" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Test.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TowerDefense/mygame/Bullet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TowerDefense/mygame/Bullet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TowerDefense/mygame/GameController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TowerDefense/mygame/GameController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mygame/Bullet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mygame/Bullet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mygame/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mygame/GameController.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -35,6 +17,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="JavaFXApplication" />
         <option value="Class" />
       </list>
     </option>
@@ -48,11 +31,11 @@
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/mygame" />
-    <property name="project.structure.last.edited" value="Modules" />
-    <property name="project.structure.proportion" value="0.0" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.excludes" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -71,12 +54,82 @@
       </list>
     </option>
   </component>
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="BasicOpsTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="mygame.BasicOpsTest" />
+      <module name="TowerDefense" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="mygame.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GameController" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="mygame.GameController" />
+      <module name="TowerDefense" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="mygame.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GameStage" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="mygame.GameStage" />
+      <module name="TowerDefense" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="mygame.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="mygame.Main" />
+      <module name="TowerDefense" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="mygame.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="lon (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="lon" />
+      <module name="TowerDefense" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.GameStage" />
+        <item itemvalue="Application.GameController" />
+        <item itemvalue="Application.BasicOpsTest" />
+        <item itemvalue="Application.lon (1)" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="00d4674f-65c0-4528-8370-8fc832b39f6b" name="Default Changelist" comment="" />
+      <changelist id="bd3eafc2-6d0b-4278-b814-3ee8f7522339" name="Default Changelist" comment="" />
       <created>1571873662441</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -96,5 +149,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Render thành công cái map :3" />
+    <option name="LAST_COMMIT_MESSAGE" value="Render thành công cái map :3" />
   </component>
 </project>

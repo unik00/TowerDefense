@@ -2,6 +2,12 @@ package mygame.tile;
 
 import mygame.Entity;
 
-public abstract class Tile extends Entity {
-    public abstract void draw();
+public class Tile extends Entity {
+    public Tile () {}
+    public Tile (int x, int y) {
+        super(x, y);
+    }
+    public void draw() {
+
+    }
 }
