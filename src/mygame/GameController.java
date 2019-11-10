@@ -52,14 +52,13 @@ public class GameController extends AnimationTimer {
     public void handle(long currentNanoTime) {
 
         //ENEMY MOVING
-        if (lastEnemyGenerationTime == 0 || (currentNanoTime - lastEnemyGenerationTime) >= (long)1e9){
+        if (lastEnemyGenerationTime == 0 || (currentNanoTime - lastEnemyGenerationTime) >= (long)1e8){
             field.addEntity(new NormalEnemy(field.getSpawnerX(), field.getSpawnerY(), field));
             lastEnemyGenerationTime = currentNanoTime;
         }
         for(Entity e : field.getEntities( )){
             if (e instanceof Enemy)
                 ((Enemy) e).move();
-            e.draw(gc);
         }
 
         //TOWER MOVING
@@ -82,10 +81,7 @@ public class GameController extends AnimationTimer {
                     if (t.distance(nearestEnemy) > ((Tower) t).getAttackRange()) continue;
 
                     //create a bullet
-
-                    //Bullet tmp = new Bullet(t.getX(), t.getY(), (Tower) t, nearestEnemy, currentNanoTime);
                     Bullet tmp = ((Tower)t).fire(nearestEnemy, currentNanoTime);
-
                     createdBullet.add(tmp);
                 }
         }
@@ -101,7 +97,6 @@ public class GameController extends AnimationTimer {
                 e.setX((int)((Bullet) e).calculateCurrentPositionX(currentNanoTime));
                 e.setY((int)((Bullet) e).calculateCurrentPositionY(currentNanoTime));
             }
-            e.draw(gc);
         }
 
         for (Bullet b : createdBullet) field.getEntities().add((Entity) b);
@@ -112,6 +107,9 @@ public class GameController extends AnimationTimer {
             if (e instanceof Mountain) {
 
             }
+        for (Entity e : field.getEntities()) if (e.isAlive()){
+            e.draw(gc);
+        }
     }
 
     @Override
