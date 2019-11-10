@@ -102,6 +102,8 @@ public class Enemy extends Entity {
     public boolean checkCollisionWithBullet(Bullet b, long currentNanoSecond){
         double x = b.calculateCurrentPositionX(currentNanoSecond);
         double y = b.calculateCurrentPositionY(currentNanoSecond);
+        x += Config.TILE_SIZE / 2.0;
+        y += Config.TILE_SIZE / 2.0;
         int topLeftX = super.getX() / Config.TILE_SIZE * Config.TILE_SIZE;
         int topLeftY = super.getY() / Config.TILE_SIZE * Config.TILE_SIZE;
         if (x >= topLeftX && x < topLeftX+Config.TILE_SIZE && y>=topLeftY&&y<topLeftY+Config.TILE_SIZE){

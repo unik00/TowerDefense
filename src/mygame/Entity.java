@@ -14,6 +14,14 @@ import javafx.scene.transform.Translate;
 public abstract class Entity {
     private int x;
     private int y;
+
+    public double getCenterX(){
+        return x + Config.TILE_SIZE / 2.0;
+    }
+    public double getCenterY(){
+        return y + Config.TILE_SIZE / 2.0;
+    }
+
     private boolean alive = true;
 
     public boolean isAlive() {
