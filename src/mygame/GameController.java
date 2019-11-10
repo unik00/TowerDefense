@@ -50,14 +50,9 @@ public class GameController extends AnimationTimer {
 
     @Override
     public void handle(long currentNanoTime) {
-<<<<<<< HEAD
 
-        //ENEMY PART
-        if (lastEnemyGenerationTime == 0 || (currentNanoTime - lastEnemyGenerationTime) >= (long)1e9){
-=======
         //ENEMY MOVING
-        if (lastEnemyGenerationTime == 0 || (currentNanoTime - lastEnemyGenerationTime) >= (long)2e9){
->>>>>>> develop-longNov9
+        if (lastEnemyGenerationTime == 0 || (currentNanoTime - lastEnemyGenerationTime) >= (long)1e9){
             field.addEntity(new NormalEnemy(field.getSpawnerX(), field.getSpawnerY(), field));
             lastEnemyGenerationTime = currentNanoTime;
         }
@@ -103,7 +98,7 @@ public class GameController extends AnimationTimer {
                     createdBullet.add(tmp);
                 }
         }
-<<<<<<< HEAD
+
         for (Bullet b : createdBullet) {
             field.getEntities().add(b);
         }
@@ -120,17 +115,15 @@ public class GameController extends AnimationTimer {
             }
             e.draw(gc);
         }
-=======
+
         for (Bullet b : createdBullet) field.getEntities().add((Entity) b);
 
         //DRAG && DROP PROCESSING
-
 
         for (Entity e : field.getEntities())
             if (e instanceof Mountain) {
 
             }
->>>>>>> develop-longNov9
     }
 
     @Override
