@@ -12,12 +12,18 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 import javafx.scene.canvas.Canvas;
+import mygame.tile.Mountain;
 import mygame.tile.tower.NormalTower;
 import mygame.tile.tower.Tower;
 
+
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Main extends Application {
+
+    List<Rectangle> targets = new ArrayList<Rectangle>();
 
     public static void main(String[] args) {
         launch(args);
@@ -43,6 +49,8 @@ public class Main extends Application {
 
         GameController controller  = new GameController(gc);
 
+        //DRAG && DROP
+        //click
         ivNormalTower.setOnDragDetected(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent event) {
@@ -54,32 +62,41 @@ public class Main extends Application {
             }
         });
 
-        Rectangle target = new Rectangle(6 * Config.TILE_SIZE, 2 * Config.TILE_SIZE, Config.TILE_SIZE, Config.TILE_SIZE);
-        target.setFill(Color.TRANSPARENT);
-        root.getChildren().add(target);
+        //set available targets
 
-        target.setOnDragOver(new EventHandler<DragEvent>() {
-            @Override
-            public void handle(DragEvent event) {
-                if (event.getGestureSource() != target && event.getDragboard().hasImage())
-                    event.acceptTransferModes(TransferMode.ANY);
-                event.consume();
+        for (Entity e : controller.getField().getEntities())
+            if (e instanceof Mountain) {
+                Rectangle target = new Rectangle(e.getX(), e.getY(), Config.TILE_SIZE, Config.TILE_SIZE);
+                target.setFill(Color.TRANSPARENT);
+                targets.add(target);
+                root.getChildren().add(target);
             }
-        });
 
-        target.setOnDragDropped(new EventHandler<DragEvent>() {
-            @Override
-            public void handle(DragEvent event) {
-                Dragboard db = event.getDragboard();
-                boolean sucess = false;
-                if (db.hasImage()) {
-                    sucess = true;
-                    controller.getField().getEntities().add(new NormalTower((int) target.getX(), (int) target.getY()));
+        for (Rectangle target : targets) {
+            target.setOnDragOver(new EventHandler<DragEvent>() {
+                @Override
+                public void handle(DragEvent event) {
+                    if (event.getGestureSource() != target && event.getDragboard().hasImage())
+                        event.acceptTransferModes(TransferMode.ANY);
+                    event.consume();
                 }
-                event.setDropCompleted(sucess);
-                event.consume();
-            }
-        });
+            });
+
+            //drop
+            target.setOnDragDropped(new EventHandler<DragEvent>() {
+                @Override
+                public void handle(DragEvent event) {
+                    Dragboard db = event.getDragboard();
+                    boolean sucess = false;
+                    if (db.hasImage()) {
+                        sucess = true;
+                        controller.getField().getEntities().add(new NormalTower((int) target.getX(), (int) target.getY()));
+                    }
+                    event.setDropCompleted(sucess);
+                    event.consume();
+                }
+            });
+        }
 
         controller.start();
     }

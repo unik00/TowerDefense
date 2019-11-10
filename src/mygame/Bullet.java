@@ -40,6 +40,7 @@ public class Bullet extends Entity {
         this.directionX = this.targetX - this.sourceX;
         this.directionY = this.targetY - this.sourceY;
 
+        /*
         System.out.print("target X: ");
         System.out.println(this.targetX);
         System.out.print("target Y: ");
@@ -48,6 +49,7 @@ public class Bullet extends Entity {
         System.out.println(this.sourceX);
         System.out.print("source Y: ");
         System.out.println(this.sourceY);
+         */
 
         double normalisingConstant = Math.sqrt(directionY*directionY+directionX*directionX);
         directionX /= normalisingConstant;

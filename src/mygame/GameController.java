@@ -82,7 +82,7 @@ public class GameController extends AnimationTimer {
                     if (t.distance(nearestEnemy) > ((Tower) t).getAttackRange()) continue;
 
                     //create a bullet
-
+                    /*
                     System.out.print("Fired a bullet at time: ");
                     System.out.println(currentNanoTime);
                     System.out.println("Tower: ");
@@ -92,6 +92,7 @@ public class GameController extends AnimationTimer {
                     System.out.println("Nearest enemey: ");
                     System.out.println(nearestEnemy.getX());
                     System.out.println(nearestEnemy.getY());
+                     */
 
                     Bullet tmp = new Bullet(t.getX(), t.getY(), (Tower) t, nearestEnemy, currentNanoTime);
 
