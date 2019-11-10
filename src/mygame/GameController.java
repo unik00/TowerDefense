@@ -55,7 +55,7 @@ public class GameController extends AnimationTimer {
         }
 
         //ENEMY MOVING
-        if (lastEnemyGenerationTime == 0 || (currentNanoTime - lastEnemyGenerationTime) >= (long)1e8){
+        if (lastEnemyGenerationTime == 0 || (currentNanoTime - lastEnemyGenerationTime) >= (long)1e6){
             field.addEntity(new NormalEnemy(field.getSpawnerX(), field.getSpawnerY(), field));
             lastEnemyGenerationTime = currentNanoTime;
         }
