@@ -1,4 +1,5 @@
 package mygame.tile.tower;
+import javafx.scene.image.Image;
 import mygame.Bullet;
 import mygame.enemy.Enemy;
 import mygame.tile.Tile;

@@ -4,17 +4,20 @@
     <list default="true" id="bd3eafc2-6d0b-4278-b814-3ee8f7522339" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TowerDefense/mygame/Bullet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TowerDefense/mygame/Bullet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TowerDefense/mygame/Entity.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TowerDefense/mygame/Entity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TowerDefense/mygame/GameController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TowerDefense/mygame/GameController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TowerDefense/mygame/GameStage.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TowerDefense/mygame/GameStage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TowerDefense/mygame/Config.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TowerDefense/mygame/Config.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TowerDefense/mygame/Main$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TowerDefense/mygame/Main$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TowerDefense/mygame/Main$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TowerDefense/mygame/Main$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TowerDefense/mygame/Main$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TowerDefense/mygame/Main$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TowerDefense/mygame/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TowerDefense/mygame/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TowerDefense/mygame/tile/tower/MachineGunTower.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TowerDefense/mygame/tile/tower/MachineGunTower.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/TowerDefense/mygame/tile/tower/NormalTower.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TowerDefense/mygame/tile/tower/NormalTower.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TowerDefense/mygame/tile/tower/SniperTower.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TowerDefense/mygame/tile/tower/SniperTower.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/TowerDefense/mygame/tile/tower/Tower.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TowerDefense/mygame/tile/tower/Tower.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mygame/Bullet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mygame/Bullet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mygame/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mygame/Entity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mygame/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mygame/GameController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mygame/GameStage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mygame/GameStage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mygame/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mygame/Config.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mygame/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mygame/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mygame/tile/tower/MachineGunTower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mygame/tile/tower/MachineGunTower.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/mygame/tile/tower/NormalTower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mygame/tile/tower/NormalTower.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mygame/tile/tower/SniperTower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mygame/tile/tower/SniperTower.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/mygame/tile/tower/Tower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mygame/tile/tower/Tower.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
