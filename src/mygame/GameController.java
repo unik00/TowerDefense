@@ -16,6 +16,7 @@ import mygame.tile.Mountain;
 import mygame.tile.tower.Tower;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import javafx.scene.shape.Rectangle;
 
@@ -50,8 +51,13 @@ public class GameController extends AnimationTimer {
 
     @Override
     public void handle(long currentNanoTime) {
-        for (Entity e : field.getEntities()) if (e.isAlive()){
-            e.draw(gc);
+        Iterator itr = field.getEntities().iterator();
+        while (itr.hasNext()) {
+            Entity e = (Entity)(itr.next());
+            if (!e.isAlive())
+                itr.remove();
+            else
+                e.draw(gc);
         }
 
         //ENEMY MOVING

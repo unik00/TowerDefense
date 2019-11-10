@@ -21,10 +21,21 @@ public class Config {
 
     public static final Image ENEMY_NORMAL = new Image("file:src/resources/AssetsKit_2/PNG/Default size/towerDefense_tile270.png");
 
-    public static final Image TOWER_NORMAL = new Image("file:src/resources/AssetsKit_2/PNG/Default size/towerDefense_tile226.png");
+
+    public static final Image TOWER_NORMAL_IMAGE = new Image("file:src/resources/AssetsKit_2/PNG/Default size/towerDefense_tile226.png");
     public static final double TOWER_NORMAL_ATTACKSPEED = 0.66;
     public static final int TOWER_NORMAL_ATTACKRANGE = 3 * TILE_SIZE;
     public static final int TOWER_NORMAL_DAMAGE = 1;
+
+    public static final Image TOWER_MACHINE_GUN_IMAGE = new Image("file:src/resources/AssetsKit_2/PNG/Default size/towerDefense_tile250.png");
+    public static final double TOWER_MACHINE_GUN_ATTACKSPEED = 2;
+    public static final int TOWER_MACHINE_GUN_ATTACKRANGE = 3 * TILE_SIZE;
+    public static final int TOWER_MACHINE_GUN_DAMAGE = 1;
+
+    public static final Image TOWER_SNIPER_IMAGE = new Image("file:src/resources/AssetsKit_2/PNG/Default size/towerDefense_tile249.png");
+    public static final double TOWER_SNIPER_ATTACKSPEED = 0.3;
+    public static final int TOWER_SNIPER_ATTACKRANGE = 5 * TILE_SIZE;
+    public static final int TOWER_SNIPER_DAMAGE = 1;
 
     public static final Image BULLET_IMAGE = new Image("file:src/resources/AssetsKit_2/PNG/Default size/towerDefense_tile272.png");
 }

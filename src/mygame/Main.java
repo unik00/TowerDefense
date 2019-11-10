@@ -1,6 +1,8 @@
 package mygame;
 
 import javafx.application.Application;
+import javafx.collections.transformation.TransformationList;
+import javafx.embed.swing.SwingFXUtils;
 import javafx.event.EventHandler;
 import javafx.scene.Group;
 import javafx.scene.Scene;
@@ -13,10 +15,12 @@ import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 import javafx.scene.canvas.Canvas;
 import mygame.tile.Mountain;
+import mygame.tile.tower.MachineGunTower;
 import mygame.tile.tower.NormalTower;
+import mygame.tile.tower.SniperTower;
 import mygame.tile.tower.Tower;
 
-
+import java.awt.image.BufferedImage;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
@@ -24,9 +28,21 @@ import java.util.List;
 public class Main extends Application {
 
     List<Rectangle> targets = new ArrayList<Rectangle>();
+    List<ImageView> towerStorage = new ArrayList<ImageView>();
 
     public static void main(String[] args) {
         launch(args);
+    }
+
+    public boolean sameImages(Image img1, Image img2) {
+        BufferedImage bImage1 = SwingFXUtils.fromFXImage(img1, null);
+        BufferedImage bImage2 = SwingFXUtils.fromFXImage(img2, null);
+        for (int y = 0; y < img1.getHeight(); ++y)
+            for (int x = 0; x < img1.getWidth(); ++x) {
+                if (bImage1.getRGB(x, y) != bImage2.getRGB(x, y))
+                    return false;
+            }
+        return true;
     }
 
     @Override
@@ -40,30 +56,46 @@ public class Main extends Application {
         primaryStage.show();
         //click san sang thi se bat dau man choi moi
 
-        Image normalTower = Config.TOWER_NORMAL;
+        //CREATE TOWER STORAGE
+        Image normalTower = Config.TOWER_NORMAL_IMAGE;
         ImageView ivNormalTower = new ImageView(normalTower);
         ivNormalTower.setX(11 * Config.TILE_SIZE);
         ivNormalTower.setY(1 * Config.TILE_SIZE);
-        //gc.drawImage(normalTower, ivNormalTower.getX(), ivNormalTower.getY());
         root.getChildren().add(ivNormalTower);
+        towerStorage.add(ivNormalTower);
+
+        Image machineGunTower = Config.TOWER_MACHINE_GUN_IMAGE;
+        ImageView ivMachineGunTower = new ImageView(machineGunTower);
+        ivMachineGunTower.setX(12 * Config.TILE_SIZE);
+        ivMachineGunTower.setY(1 * Config.TILE_SIZE);
+        root.getChildren().add(ivMachineGunTower);
+        towerStorage.add(ivMachineGunTower);
+
+        Image sniperTower = Config.TOWER_SNIPER_IMAGE;
+        ImageView ivSniperTower = new ImageView(sniperTower);
+        ivSniperTower.setX(13 * Config.TILE_SIZE);
+        ivSniperTower.setY(1 * Config.TILE_SIZE);
+        root.getChildren().add(ivSniperTower);
+        towerStorage.add(ivSniperTower);
 
         GameController controller  = new GameController(gc);
 
         //DRAG && DROP
         //click
-        ivNormalTower.setOnDragDetected(new EventHandler<MouseEvent>() {
-            @Override
-            public void handle(MouseEvent event) {
-                Dragboard db = ivNormalTower.startDragAndDrop(TransferMode.ANY);
-                ClipboardContent content = new ClipboardContent();
-                content.putImage(ivNormalTower.getImage());
-                db.setContent(content);
-                event.consume();
-            }
-        });
+        for (ImageView iv : towerStorage) {
+            iv.setOnDragDetected(new EventHandler<MouseEvent>() {
+                @Override
+                public void handle(MouseEvent event) {
+                    Dragboard db = iv.startDragAndDrop(TransferMode.ANY);
+                    ClipboardContent content = new ClipboardContent();
+                    content.putImage(iv.getImage());
+                    db.setContent(content);
+                    event.consume();
+                }
+            });
+        }
 
-        //set available targets
-
+        //SET MOUNTAINS CAN BE PUT TOWER ON
         for (Entity e : controller.getField().getEntities())
             if (e instanceof Mountain) {
                 Rectangle target = new Rectangle(e.getX(), e.getY(), Config.TILE_SIZE, Config.TILE_SIZE);
@@ -82,7 +114,7 @@ public class Main extends Application {
                 }
             });
 
-            //drop
+            //DROP
             target.setOnDragDropped(new EventHandler<DragEvent>() {
                 @Override
                 public void handle(DragEvent event) {
@@ -90,7 +122,13 @@ public class Main extends Application {
                     boolean sucess = false;
                     if (db.hasImage()) {
                         sucess = true;
-                        controller.getField().getEntities().add(new NormalTower((int) target.getX(), (int) target.getY()));
+                        //System.out.println(sameImages(db.getImage(), Config.TOWER_NORMAL_IMAGE));
+                        if (sameImages(db.getImage(), Config.TOWER_NORMAL_IMAGE))
+                            controller.getField().getEntities().add(new NormalTower((int) target.getX(), (int) target.getY()));
+                        if (sameImages(db.getImage(), Config.TOWER_MACHINE_GUN_IMAGE))
+                            controller.getField().getEntities().add(new MachineGunTower((int) target.getX(), (int) target.getY()));
+                        if (sameImages(db.getImage(), Config.TOWER_SNIPER_IMAGE))
+                            controller.getField().getEntities().add(new SniperTower((int) target.getX(), (int) target.getY()));
                     }
                     event.setDropCompleted(sucess);
                     event.consume();
