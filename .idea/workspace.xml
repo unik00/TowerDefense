@@ -3,14 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="bd3eafc2-6d0b-4278-b814-3ee8f7522339" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TowerDefense/mygame/Entity.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TowerDefense/mygame/Entity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TowerDefense/mygame/Bullet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TowerDefense/mygame/Bullet.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/TowerDefense/mygame/GameController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TowerDefense/mygame/GameController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TowerDefense/mygame/GameStage.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TowerDefense/mygame/GameStage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TowerDefense/mygame/enemy/Enemy.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TowerDefense/mygame/enemy/Enemy.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mygame/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mygame/Entity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mygame/Bullet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mygame/Bullet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/mygame/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mygame/GameController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mygame/GameStage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mygame/GameStage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mygame/enemy/Enemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mygame/enemy/Enemy.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />

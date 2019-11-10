@@ -40,7 +40,7 @@ public class Bullet extends Entity {
     public Bullet (int x, int y, Tower source, Enemy target, long firedTime) {
         super(x, y);
         this.damage = source.getDamage();
-        this.speed = 4;
+        this.speed = 5;
         this.firedTime = firedTime;
         this.targetX = target.getX();// + Config.TILE_SIZE / 2.0;
         this.targetY = target.getY();// + Config.TILE_SIZE / 2.0; // aim the center of enemy
@@ -49,7 +49,7 @@ public class Bullet extends Entity {
         this.directionX = this.targetX - this.sourceX;
         this.directionY = this.targetY - this.sourceY;
 
-
+/*
         System.out.print("target X: ");
         System.out.println(this.targetX);
         System.out.print("target Y: ");
@@ -58,7 +58,7 @@ public class Bullet extends Entity {
         System.out.println(this.sourceX);
         System.out.print("source Y: ");
         System.out.println(this.sourceY);
-
+*/
         System.out.print("k: "); System.out.println(directionY/directionX);
         double k = directionY / directionX;
         if (k>=0){
@@ -94,5 +94,11 @@ public class Bullet extends Entity {
 
     public void setDamage(int damage) {
         this.damage = damage;
+    }
+
+    public boolean goesOutOfBound(){
+        double cx = getX() + Config.TILE_SIZE/2.0, cy=getY()+Config.TILE_SIZE/2.0;
+        return cx<0 || cx>Config.TILE_SIZE*Config.TILE_HORIZONTAL-7.5
+                ||cy<0||cy>Config.TILE_SIZE*Config.TILE_VERTICAL-7.5;
     }
 }
