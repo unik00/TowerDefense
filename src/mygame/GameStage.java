@@ -4,15 +4,12 @@ import mygame.tile.Mountain;
 import mygame.tile.Road;
 import mygame.tile.Spawner;
 import mygame.tile.Target;
-import mygame.tile.tower.NormalTower;
 
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
-import java.util.Collections;
 
 // Stage dinh nghia trang thai bat dau cua 1 Field
 public class GameStage {

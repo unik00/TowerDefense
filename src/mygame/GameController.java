@@ -50,16 +50,18 @@ public class GameController extends AnimationTimer {
 
     @Override
     public void handle(long currentNanoTime) {
+        for (Entity e : field.getEntities()) if (e.isAlive()){
+            e.draw(gc);
+        }
 
         //ENEMY MOVING
-        if (lastEnemyGenerationTime == 0 || (currentNanoTime - lastEnemyGenerationTime) >= (long)1e9){
+        if (lastEnemyGenerationTime == 0 || (currentNanoTime - lastEnemyGenerationTime) >= (long)1e8){
             field.addEntity(new NormalEnemy(field.getSpawnerX(), field.getSpawnerY(), field));
             lastEnemyGenerationTime = currentNanoTime;
         }
         for(Entity e : field.getEntities( )){
             if (e instanceof Enemy)
                 ((Enemy) e).move();
-            e.draw(gc);
         }
 
         //TOWER MOVING
@@ -67,7 +69,7 @@ public class GameController extends AnimationTimer {
         for (Entity t : field.getEntities()) {
             if (t instanceof Tower)
                 //if it's time to fire
-                if ( currentNanoTime - ((Tower) t).getLastBulletGenerationTime() > (long) 1e9 / ((Tower) t).getAttackSpeed()) {
+                if ( currentNanoTime - ((Tower) t).getLastBulletGenerationTime() > (long) 1e8 / ((Tower) t).getAttackSpeed()) {
                     ((Tower) t).setLastBulletGenerationTime(currentNanoTime);
 
                     //find nearest enemy
@@ -82,10 +84,7 @@ public class GameController extends AnimationTimer {
                     if (t.distance(nearestEnemy) > ((Tower) t).getAttackRange()) continue;
 
                     //create a bullet
-
-                    //Bullet tmp = new Bullet(t.getX(), t.getY(), (Tower) t, nearestEnemy, currentNanoTime);
                     Bullet tmp = ((Tower)t).fire(nearestEnemy, currentNanoTime);
-
                     createdBullet.add(tmp);
                 }
         }
@@ -93,6 +92,7 @@ public class GameController extends AnimationTimer {
         for (Bullet b : createdBullet) {
             field.getEntities().add(b);
         }
+        // check for removing destroyed object
         for(Entity e : field.getEntities( )) if (e.isAlive()){
             if (e instanceof Enemy){
                 ((Enemy) e).checkHitByBulletAndRemove(currentNanoTime);
@@ -100,11 +100,10 @@ public class GameController extends AnimationTimer {
             if (e instanceof Bullet){
                 e.setX((int)((Bullet) e).calculateCurrentPositionX(currentNanoTime));
                 e.setY((int)((Bullet) e).calculateCurrentPositionY(currentNanoTime));
+                if (((Bullet)e).goesOutOfBound())
+                    e.setAlive(false);
             }
-            e.draw(gc);
         }
-
-        for (Bullet b : createdBullet) field.getEntities().add((Entity) b);
 
         //DRAG && DROP PROCESSING
 
@@ -112,6 +111,7 @@ public class GameController extends AnimationTimer {
             if (e instanceof Mountain) {
 
             }
+
     }
 
     @Override
