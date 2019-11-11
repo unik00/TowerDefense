@@ -22,16 +22,7 @@ public class Enemy extends Entity {
 
     private int velocityX;
     private int velocityY;
-    private Image shadow, straightShadow;
 
-    public void setShadow(Image shadow) {
-        this.shadow = shadow;
-        this.straightShadow = shadow;
-    }
-
-    public Image getShadow() {
-        return shadow;
-    }
 
     public int getVelocityX() {
         return velocityX;
@@ -162,31 +153,6 @@ public class Enemy extends Entity {
         }
     }
 
-    public void setDirection(int dx, int dy){
-        super.setDirection(dx, dy);
-        //System.out.println("?");
-        ImageView iv = new ImageView(straightShadow);
-        Rotate rotation = new Rotate();
-        rotation.setPivotX(0);
-        rotation.setPivotY(0);
-        if (dx == 0 && dy == 1) {
-            rotation.setAngle(90);
-        }
-        else if (dx == 0 && dy == -1){
-            rotation.setAngle(-90);
-        }
-        else if (dx == 1 && dy == 0){
-            rotation.setAngle(0);
-        }
-        else if (dx == -1 && dy == 0){
-            rotation.setAngle(-180);
-        }
-        iv.getTransforms().add(rotation);
-        SnapshotParameters params = new SnapshotParameters();
-        params.setFill(Color.TRANSPARENT);
-        this.shadow = iv.snapshot(params, null);
-    }
-
     private void drawHPBar(GraphicsContext gc){
         double barX = super.getX()+0.2*Config.TILE_SIZE;
         double barY = super.getY();
@@ -200,10 +166,6 @@ public class Enemy extends Entity {
 
     }
     public void draw(GraphicsContext gc){
-        // draw shadow
-        gc.drawImage(shadow, super.getX()-Config.TILE_SIZE/3.0, super.getY()+Config.TILE_SIZE/2.0);
-
-        // draw main
         super.draw(gc);
 
         // draw HP bar
