@@ -15,7 +15,7 @@ public class Config {
     public static final int SCREEN_HEIGHT = TILE_SIZE * TILE_VERTICAL;
 
     public static final Image ROAD_IMAGE = new Image("file:src/resources/AssetsKit_2/PNG/Default size/towerDefense_tile050.png");
-    public static final Image MOUNTAIN_IMAGE = new Image("file:src/resources/AssetsKit_2/PNG/Default size/towerDefense_tile042.png");
+    public static final Image MOUNTAIN_IMAGE = new Image("file:src/resources/AssetsKit_2/PNG/Default size/towerDefense_tile024.png");
     public static final Image SPAWNER_IMAGE = new Image("file:src/resources/AssetsKit_2/PNG/Default size/towerDefense_tile049.png");
     public static final Image TARGET_IMAGE = new Image("file:src/resources/AssetsKit_2/PNG/Default size/towerDefense_tile059.png");
     public static final Image TOWER_BASE_IMAGE = new Image("file:src/resources/AssetsKit_2/PNG/Default size/towerDefense_tile181.png");
@@ -23,7 +23,7 @@ public class Config {
     public static final Image ENEMY_NORMAL_SHADOW = new Image("file:src/resources/AssetsKit_2/PNG/Default size/towerDefense_tile293.png");
 
     public static final Image ENEMY_TANKER_GUN = new Image("file:src/resources/AssetsKit_2/PNG/Default size/towerDefense_tile292.png");
-    public static final Image ENEMY_TANKER_BASE = new Image("file:src/resources/AssetsKit_2/PNG/Default size/towerDefense_tile269.png");
+    public static final Image ENEMY_TANKER_BASE = new Image("file:src/resources/AssetsKit_2/PNG/Default size/towerDefense_tile268.png");
 
 
     public static final Image TOWER_NORMAL_IMAGE = new Image("file:src/resources/AssetsKit_2/PNG/Default size/towerDefense_tile226.png");

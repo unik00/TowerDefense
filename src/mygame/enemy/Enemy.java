@@ -201,7 +201,7 @@ public class Enemy extends Entity {
     }
     public void draw(GraphicsContext gc){
         // draw shadow
-        gc.drawImage(shadow, super.getX()-Config.TILE_SIZE/3.0, super.getY()+Config.TILE_SIZE/4.0);
+        gc.drawImage(shadow, super.getX()-Config.TILE_SIZE/3.0, super.getY()+Config.TILE_SIZE/2.0);
 
         // draw main
         super.draw(gc);

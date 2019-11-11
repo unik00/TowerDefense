@@ -5,21 +5,10 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/TowerDefense/mygame/Config.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TowerDefense/mygame/Config.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/TowerDefense/mygame/GameController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TowerDefense/mygame/GameController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TowerDefense/mygame/Main$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TowerDefense/mygame/Main$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TowerDefense/mygame/Main$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TowerDefense/mygame/Main$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TowerDefense/mygame/Main$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TowerDefense/mygame/Main$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TowerDefense/mygame/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TowerDefense/mygame/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/TowerDefense/mygame/enemy/Enemy.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TowerDefense/mygame/enemy/Enemy.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TowerDefense/mygame/enemy/TankerEnemy.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TowerDefense/mygame/enemy/TankerEnemy.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TowerDefense/mygame/tile/tower/MachineGunTower.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TowerDefense/mygame/tile/tower/MachineGunTower.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TowerDefense/mygame/tile/tower/SniperTower.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TowerDefense/mygame/tile/tower/SniperTower.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TowerDefense/mygame/tile/tower/Tower.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TowerDefense/mygame/tile/tower/Tower.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/mygame/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mygame/Config.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/mygame/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mygame/GameController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mygame/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mygame/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/mygame/enemy/Enemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mygame/enemy/Enemy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mygame/enemy/TankerEnemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mygame/enemy/TankerEnemy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mygame/tile/tower/Tower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mygame/tile/tower/Tower.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

@@ -83,7 +83,12 @@ public class GameController extends AnimationTimer {
 
         //ENEMY MOVING
         if (lastEnemyGenerationTime == 0 || (currentNanoTime - lastEnemyGenerationTime) >= (long)2e9){
-            field.addEntity(new TankerEnemy(field.getSpawnerX(), field.getSpawnerY(), field));
+            Enemy spawned;
+            if (currentNanoTime % 2 == 0){
+                spawned = new TankerEnemy(field.getSpawnerX(), field.getSpawnerY(), field);
+            }
+            else spawned = new NormalEnemy(field.getSpawnerX(), field.getSpawnerY(), field);
+            field.addEntity(spawned);
             lastEnemyGenerationTime = currentNanoTime;
         }
         for(Entity e : field.getEntities( )){
