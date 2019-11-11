@@ -32,9 +32,11 @@ public class GameController extends AnimationTimer {
     private GraphicsContext gc;
     private Group root;
     private List<Tower> sampleTower = new ArrayList<Tower>();
+    private ImageView[] hearts = new ImageView[5];
     private final long startNanoTime = System.nanoTime();
     private long lastEnemyGenerationTime = 0;
     private int reward = 200;
+    private int remainingHeart = 5;
     private Text rewardText = new Text(10 * Config.TILE_SIZE, 5 * Config.TILE_SIZE, "");
 
 
@@ -70,6 +72,20 @@ public class GameController extends AnimationTimer {
 
     @Override
     public void handle(long currentNanoTime) {
+
+        for (Entity e : field.getEntities())
+            if (e instanceof Enemy && !e.isAlive()) {
+                if (((Enemy) e).getHitPoint() <= 0)
+                    reward += ((Enemy) e).getReward();
+                else {
+                    if (remainingHeart > 0) {
+                        //System.out.println("aaaaaaaaaaaaaaa");
+                        hearts[remainingHeart - 1].setImage(Config.HEART_DEAD_IMAGE);
+                        remainingHeart -= 1;
+                    }
+                }
+            }
+
         Iterator itr = field.getEntities().iterator();
         while (itr.hasNext()) {
             Entity e = (Entity)(itr.next());
@@ -143,9 +159,20 @@ public class GameController extends AnimationTimer {
         rewardText.setText("BALANCE: " + String.valueOf(reward) + "$");
     }
 
+    public void initRoot() {
+        root.getChildren().add(rewardText);
+        for (int i = 0; i < 5; ++i) {
+            ImageView iv = new ImageView(Config.HEART_ALIVE_IMAGE);
+            iv.setX((10+i) * Config.TILE_SIZE + 16);
+            iv.setY(4 * Config.TILE_SIZE);
+            hearts[i] = iv;
+            root.getChildren().add(hearts[i]);
+        }
+    }
+
     @Override
     public void start() {
-        root.getChildren().add(rewardText);
+        initRoot();
         super.start();
     }
 }

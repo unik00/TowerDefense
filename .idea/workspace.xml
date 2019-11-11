@@ -1,8 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3601f795-6434-425d-9054-36e1c81a5dcc" name="Default Changelist" comment="">
+    <list default="true" id="3ba608e2-aa0e-4d56-8f11-4847e64fd41a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/out/production/TowerDefense/resources/AssetsKit_2/PNG/Retina/towerDefense_tile300.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/TowerDefense/resources/AssetsKit_2/PNG/Retina/towerDefense_tile301.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/resources/AssetsKit_2/PNG/Retina/towerDefense_tile300.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/resources/AssetsKit_2/PNG/Retina/towerDefense_tile301.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TowerDefense/mygame/Config.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TowerDefense/mygame/Config.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TowerDefense/mygame/GameController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TowerDefense/mygame/GameController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mygame/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mygame/Config.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mygame/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mygame/GameController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,16 +57,5 @@
   </component>
   <component name="TaskManager">
     <servers />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
   </component>
 </project>
