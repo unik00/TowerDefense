@@ -2,23 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3ba608e2-aa0e-4d56-8f11-4847e64fd41a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/out/production/TowerDefense/resources/AssetsKit_2/PNG/Retina/towerDefense_tile300.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/TowerDefense/resources/AssetsKit_2/PNG/Retina/towerDefense_tile301.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/AssetsKit_2/PNG/Retina/towerDefense_tile300.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/AssetsKit_2/PNG/Retina/towerDefense_tile301.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TowerDefense/mygame/Config.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TowerDefense/mygame/Config.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TowerDefense/mygame/GameController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TowerDefense/mygame/GameController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mygame/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mygame/Config.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mygame/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mygame/GameController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -57,5 +57,8 @@
   </component>
   <component name="TaskManager">
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
 </project>
