@@ -11,5 +11,7 @@ public class NormalEnemy extends Enemy {
         super.setHitPoint(10);
         super.setShadow(Config.ENEMY_NORMAL_SHADOW);
         setImage(Config.ENEMY_NORMAL);
+        setReward(10);
+
     }
 }
