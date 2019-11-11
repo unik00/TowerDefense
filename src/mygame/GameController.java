@@ -1,15 +1,19 @@
 package mygame;
 
 import javafx.animation.AnimationTimer;
+import javafx.beans.value.ObservableStringValue;
+import javafx.beans.value.ObservableValue;
 import javafx.event.EventHandler;
 import javafx.scene.Group;
 import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.ClipboardContent;
 import javafx.scene.input.Dragboard;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.input.TransferMode;
+import javafx.scene.text.Text;
 import mygame.enemy.Enemy;
 import mygame.enemy.NormalEnemy;
 import mygame.tile.Mountain;
@@ -24,14 +28,20 @@ public class GameController extends AnimationTimer {
     private GameField field;
     private GameStage stage;
     private GraphicsContext gc;
+    private Group root;
     private List<Tower> sampleTower = new ArrayList<Tower>();
     private final long startNanoTime = System.nanoTime();
     private long lastEnemyGenerationTime = 0;
+    private int reward = 0;
+    private String rewardText;
+    private Label rewardAnnounce;
 
 
-    public GameController(GraphicsContext gc) throws FileNotFoundException {
+
+    public GameController(GraphicsContext gc, Group root) throws FileNotFoundException {
         this.field = new GameField(GameStage.load("src/stage/demo.txt"));
         this.gc = gc;
+        this.root = root;
     }
 
     public GameField getField() {
@@ -55,8 +65,10 @@ public class GameController extends AnimationTimer {
         Iterator itr = field.getEntities().iterator();
         while (itr.hasNext()) {
             Entity e = (Entity)(itr.next());
-            if (!e.isAlive())
+            if (!e.isAlive()) {
+                if (e instanceof Enemy) reward += ((Enemy) e).getReward();
                 itr.remove();
+            }
             else
                 e.draw(gc);
         }
@@ -100,25 +112,22 @@ public class GameController extends AnimationTimer {
             field.getEntities().add(b);
         }
         // check for removing destroyed object
-        for(Entity e : field.getEntities( )) if (e.isAlive()){
-            if (e instanceof Enemy){
-                ((Enemy) e).checkHitByBulletAndRemove(currentNanoTime);
-            }
-            if (e instanceof Bullet){
-                e.setX((int)((Bullet) e).calculateCurrentPositionX(currentNanoTime));
-                e.setY((int)((Bullet) e).calculateCurrentPositionY(currentNanoTime));
-                if (((Bullet)e).goesOutOfBound())
-                    e.setAlive(false);
+        for(Entity e : field.getEntities( )) {
+            if (e.isAlive()) {
+                if (e instanceof Enemy) {
+                    ((Enemy) e).checkHitByBulletAndRemove(currentNanoTime);
+                }
+                if (e instanceof Bullet) {
+                    e.setX((int) ((Bullet) e).calculateCurrentPositionX(currentNanoTime));
+                    e.setY((int) ((Bullet) e).calculateCurrentPositionY(currentNanoTime));
+                    if (((Bullet) e).goesOutOfBound())
+                        e.setAlive(false);
+                }
             }
         }
 
-        //DRAG && DROP PROCESSING
-
-        for (Entity e : field.getEntities())
-            if (e instanceof Mountain) {
-
-            }
-
+        //REWARD CONTROLLING
+        rewardText = "REWARD :" + String.valueOf(reward);
     }
 
     @Override

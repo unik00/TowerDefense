@@ -59,14 +59,14 @@ public class Main extends Application {
 
         Image machineGunTower = Config.TOWER_MACHINE_GUN_IMAGE;
         ImageView ivMachineGunTower = new ImageView(machineGunTower);
-        ivMachineGunTower.setX(12 * Config.TILE_SIZE);
+        ivMachineGunTower.setX(13 * Config.TILE_SIZE);
         ivMachineGunTower.setY(1 * Config.TILE_SIZE);
         root.getChildren().add(ivMachineGunTower);
         towerStorage.add(ivMachineGunTower);
 
         Image sniperTower = Config.TOWER_SNIPER_IMAGE;
         ImageView ivSniperTower = new ImageView(sniperTower);
-        ivSniperTower.setX(13 * Config.TILE_SIZE);
+        ivSniperTower.setX(12 * Config.TILE_SIZE);
         ivSniperTower.setY(1 * Config.TILE_SIZE);
         root.getChildren().add(ivSniperTower);
         towerStorage.add(ivSniperTower);
@@ -135,8 +135,8 @@ public class Main extends Application {
             if (sameImages(iv.getImage(), Config.TOWER_NORMAL_IMAGE)) {
                 Text damageInfo = new Text(Config.TOWER_INFO_DAMAGE_X, Config.TOWER_INFO_DAMAGE_Y, "DAMAGE : " + String.valueOf(Config.TOWER_NORMAL_DAMAGE));
                 Text attackspeedInfo = new Text(Config.TOWER_INFO_ATTACK_SPEED_X, Config.TOWER_INFO_ATTACK_SPEED_Y, "ATTACK SPEED : " + String.valueOf(Config.TOWER_NORMAL_ATTACK_SPEED));
-                Text attackrangeInfo = new Text(Config.TOWER_INFO_ATTACK_RANGE_X, Config.TOWER_INFO_ATTACK_RANGE_Y, "ATTACK RANGE : " + String.valueOf(Config.TOWER_NORMAL_ATTACK_RANGE));
-                Text priceInfo = new Text(Config.TOWER_INFO_PRICE_X, Config.TOWER_INFO_PRICE_Y, "PRICE : " + String.valueOf(Config.TOWER_NORMAL_PRICE) + "$");
+                Text attackrangeInfo = new Text(Config.TOWER_INFO_ATTACK_RANGE_X, Config.TOWER_INFO_ATTACK_RANGE_Y,"ATTACK RANGE : " + String.valueOf(Config.TOWER_NORMAL_ATTACK_RANGE));
+                Text priceInfo = new Text(Config.TOWER_INFO_PRICE_X, Config.TOWER_INFO_PRICE_Y,"PRICE : " + String.valueOf(Config.TOWER_NORMAL_PRICE) + "$");
                 popup.getContent().addAll(damageInfo, attackrangeInfo, attackspeedInfo, priceInfo);
             }
 
@@ -160,8 +160,8 @@ public class Main extends Application {
                 @Override
                 public void handle(MouseEvent event) {
                     popup.show(stage);
-                    popup.setX(stage.getX() + 32);
-                    popup.setY(stage.getY() + 40);
+                    popup.setX(stage.getX());
+                    popup.setY(stage.getY() + 40);   //plus 40 because of the title
                     event.consume();
                 }
             });
@@ -186,10 +186,12 @@ public class Main extends Application {
         primaryStage.show();
         //click san sang thi se bat dau man choi moi
 
-        GameController controller  = new GameController(gc);
+        GameController controller  = new GameController(gc, root);
         createTowerStorage(root);
         dragAndDrop(root, controller);
         MouseEnteredTowerStorage(primaryStage);
+
+        System.out.println("aaaaaaaaaaaaaaaaaaaaaaaaaa");
 
         controller.start();
     }

@@ -44,13 +44,13 @@ public class Config {
     public static final Image BULLET_IMAGE = new Image("file:src/resources/AssetsKit_2/PNG/Default size/towerDefense_tile272.png");
 
     //GUI -- TOWER INFO
-    public static final int TOWER_INFO_DAMAGE_X = 10 * TILE_SIZE + 10;
+    public static final int TOWER_INFO_DAMAGE_X = 10 * TILE_SIZE + 25;
     public static final int TOWER_INFO_DAMAGE_Y = 0 * TILE_SIZE + 15;
-    public static final int TOWER_INFO_PRICE_X = 10 * TILE_SIZE + 10;
+    public static final int TOWER_INFO_PRICE_X = 10 * TILE_SIZE + 25;
     public static final int TOWER_INFO_PRICE_Y = 0 * TILE_SIZE + 40;
-    public static final int TOWER_INFO_ATTACK_SPEED_X = 12 * TILE_SIZE + 10;
+    public static final int TOWER_INFO_ATTACK_SPEED_X = 12 * TILE_SIZE + 25;
     public static final int TOWER_INFO_ATTACK_SPEED_Y = 0 * TILE_SIZE + 15;
-    public static final int TOWER_INFO_ATTACK_RANGE_X = 12 * TILE_SIZE + 10;
+    public static final int TOWER_INFO_ATTACK_RANGE_X = 12 * TILE_SIZE + 25;
     public static final int TOWER_INFO_ATTACK_RANGE_Y = 0 * TILE_SIZE + 40;
 }
 
