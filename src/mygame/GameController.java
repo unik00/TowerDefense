@@ -28,6 +28,7 @@ public class GameController extends AnimationTimer {
     private final long startNanoTime = System.nanoTime();
     private long lastEnemyGenerationTime = 0;
 
+
     public GameController(GraphicsContext gc) throws FileNotFoundException {
         this.field = new GameField(GameStage.load("src/stage/demo.txt"));
         this.gc = gc;

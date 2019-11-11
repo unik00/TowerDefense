@@ -9,11 +9,20 @@ public class Tower extends Tile {
     private int attackRange;
     private int damage = 1;
     private long lastBulletGenerationTime;
+    private int price;
 
     public Tower() {}
     public Tower(int x, int y) {
         super(x, y);
         lastBulletGenerationTime = 0;
+    }
+
+    public int getPrice() {
+        return price;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
     }
 
     public double getAttackSpeed() {

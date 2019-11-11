@@ -165,7 +165,7 @@ public class Enemy extends Entity {
 
     public void setDirection(int dx, int dy){
         super.setDirection(dx, dy);
-        System.out.println("?");
+        //System.out.println("?");
         ImageView iv = new ImageView(straightShadow);
         Rotate rotation = new Rotate();
         rotation.setPivotX(0);
