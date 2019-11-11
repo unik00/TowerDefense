@@ -28,6 +28,7 @@ import java.awt.image.BufferedImage;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class Main extends Application {
 
@@ -114,12 +115,24 @@ public class Main extends Application {
                     if (db.hasImage()) {
                         sucess = true;
                         //System.out.println(sameImages(db.getImage(), Config.TOWER_NORMAL_IMAGE));
-                        if (sameImages(db.getImage(), Config.TOWER_NORMAL_IMAGE))
-                            controller.getField().getEntities().add(new NormalTower((int) target.getX(), (int) target.getY()));
-                        if (sameImages(db.getImage(), Config.TOWER_MACHINE_GUN_IMAGE))
-                            controller.getField().getEntities().add(new MachineGunTower((int) target.getX(), (int) target.getY()));
-                        if (sameImages(db.getImage(), Config.TOWER_SNIPER_IMAGE))
-                            controller.getField().getEntities().add(new SniperTower((int) target.getX(), (int) target.getY()));
+                        if (sameImages(db.getImage(), Config.TOWER_NORMAL_IMAGE)) {
+                            if (controller.getReward() >= Config.TOWER_NORMAL_PRICE) {
+                                controller.getField().getEntities().add(new NormalTower((int) target.getX(), (int) target.getY()));
+                                controller.setReward(controller.getReward() - Config.TOWER_NORMAL_PRICE);
+                            }
+                        }
+                        if (sameImages(db.getImage(), Config.TOWER_MACHINE_GUN_IMAGE)) {
+                            if (controller.getReward() >= Config.TOWER_MACHINE_GUN_PRICE) {
+                                controller.getField().getEntities().add(new MachineGunTower((int) target.getX(), (int) target.getY()));
+                                controller.setReward(controller.getReward() - Config.TOWER_MACHINE_GUN_PRICE);
+                            }
+                        }
+                        if (sameImages(db.getImage(), Config.TOWER_SNIPER_IMAGE)) {
+                            if (controller.getReward() >= Config.TOWER_SNIPER_PRICE) {
+                                controller.getField().getEntities().add(new SniperTower((int) target.getX(), (int) target.getY()));
+                                controller.setReward(controller.getReward() - Config.TOWER_SNIPER_PRICE);
+                            }
+                        }
                     }
                     event.setDropCompleted(sucess);
                     event.consume();
@@ -128,7 +141,7 @@ public class Main extends Application {
         }
     }
 
-    public void MouseEnteredTowerStorage(Stage stage) {
+    public void mouseEnteredTowerStorage(Stage stage) {
         for (ImageView iv : towerStorage) {
             Popup popup = new Popup(); //popup.setX(9 * Config.TILE_SIZE + 40); popup.setY(20);
 
@@ -181,17 +194,16 @@ public class Main extends Application {
         Canvas canvas = new Canvas(Config.SCREEN_WIDTH, Config.SCREEN_HEIGHT);
         GraphicsContext gc = canvas.getGraphicsContext2D();
         Group root = new Group();
-        root.getChildren().add(canvas);
-        primaryStage.setScene(new Scene(root));
+        root.getChildren().addAll(canvas);
+        Scene scene = new Scene(root);
+        primaryStage.setScene(scene);
         primaryStage.show();
         //click san sang thi se bat dau man choi moi
 
         GameController controller  = new GameController(gc, root);
         createTowerStorage(root);
         dragAndDrop(root, controller);
-        MouseEnteredTowerStorage(primaryStage);
-
-        System.out.println("aaaaaaaaaaaaaaaaaaaaaaaaaa");
+        mouseEnteredTowerStorage(primaryStage);
 
         controller.start();
     }
