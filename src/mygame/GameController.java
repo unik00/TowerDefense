@@ -5,6 +5,7 @@ import javafx.beans.value.ObservableStringValue;
 import javafx.beans.value.ObservableValue;
 import javafx.event.EventHandler;
 import javafx.scene.Group;
+import javafx.scene.Scene;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
@@ -16,6 +17,7 @@ import javafx.scene.input.TransferMode;
 import javafx.scene.text.Text;
 import mygame.enemy.Enemy;
 import mygame.enemy.NormalEnemy;
+import mygame.enemy.TankerEnemy;
 import mygame.tile.Mountain;
 import mygame.tile.tower.Tower;
 import java.io.FileNotFoundException;
@@ -32,16 +34,22 @@ public class GameController extends AnimationTimer {
     private List<Tower> sampleTower = new ArrayList<Tower>();
     private final long startNanoTime = System.nanoTime();
     private long lastEnemyGenerationTime = 0;
-    private int reward = 0;
-    private String rewardText;
-    private Label rewardAnnounce;
-
+    private int reward = 200;
+    private Text rewardText = new Text(10 * Config.TILE_SIZE, 5 * Config.TILE_SIZE, "");
 
 
     public GameController(GraphicsContext gc, Group root) throws FileNotFoundException {
         this.field = new GameField(GameStage.load("src/stage/demo.txt"));
         this.gc = gc;
         this.root = root;
+    }
+
+    public int getReward() {
+        return reward;
+    }
+
+    public void setReward(int reward) {
+        this.reward = reward;
     }
 
     public GameField getField() {
@@ -66,7 +74,7 @@ public class GameController extends AnimationTimer {
         while (itr.hasNext()) {
             Entity e = (Entity)(itr.next());
             if (!e.isAlive()) {
-                if (e instanceof Enemy) reward += ((Enemy) e).getReward();
+                if (e instanceof Enemy && ((Enemy) e).getHitPoint() <= 0) reward += ((Enemy) e).getReward();
                 itr.remove();
             }
             else
@@ -74,8 +82,8 @@ public class GameController extends AnimationTimer {
         }
 
         //ENEMY MOVING
-        if (lastEnemyGenerationTime == 0 || (currentNanoTime - lastEnemyGenerationTime) >= (long)1e8){
-            field.addEntity(new NormalEnemy(field.getSpawnerX(), field.getSpawnerY(), field));
+        if (lastEnemyGenerationTime == 0 || (currentNanoTime - lastEnemyGenerationTime) >= (long)2e9){
+            field.addEntity(new TankerEnemy(field.getSpawnerX(), field.getSpawnerY(), field));
             lastEnemyGenerationTime = currentNanoTime;
         }
         for(Entity e : field.getEntities( )){
@@ -88,7 +96,7 @@ public class GameController extends AnimationTimer {
         for (Entity t : field.getEntities()) {
             if (t instanceof Tower)
                 //if it's time to fire
-                if ( currentNanoTime - ((Tower) t).getLastBulletGenerationTime() > (long) 1e8 / ((Tower) t).getAttackSpeed()) {
+                if ( currentNanoTime - ((Tower) t).getLastBulletGenerationTime() > (long) 5e8 / ((Tower) t).getAttackSpeed()) {
                     ((Tower) t).setLastBulletGenerationTime(currentNanoTime);
 
                     //find nearest enemy
@@ -126,12 +134,13 @@ public class GameController extends AnimationTimer {
             }
         }
 
-        //REWARD CONTROLLING
-        rewardText = "REWARD :" + String.valueOf(reward);
+        //REWARD ANNOUNCEMENT
+        rewardText.setText("BALANCE: " + String.valueOf(reward) + "$");
     }
 
     @Override
     public void start() {
+        root.getChildren().add(rewardText);
         super.start();
     }
 }

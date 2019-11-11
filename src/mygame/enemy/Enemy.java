@@ -116,11 +116,10 @@ public class Enemy extends Entity {
             if (e instanceof Bullet && e.isAlive()){
                 if (checkCollisionWithBullet((Bullet)e, currentNanoSecond)){
                     hitPoint -= ((Bullet) e).getDamage();
-                    if (hitPoint == 0){
+                    if (hitPoint <= 0){
                         super.setAlive(false);
                     }
                     e.setAlive(false);
-                    assert hitPoint >= 0;
                     return true;
                 }
             }
