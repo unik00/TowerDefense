@@ -14,15 +14,17 @@ public class Config {
     public static final int SCREEN_WIDTH = TILE_SIZE * (TILE_HORIZONTAL + 5);
     public static final int SCREEN_HEIGHT = TILE_SIZE * TILE_VERTICAL;
 
+    //TILE
     public static final Image ROAD_IMAGE = new Image("file:src/resources/AssetsKit_2/PNG/Default size/towerDefense_tile050.png");
     public static final Image MOUNTAIN_IMAGE = new Image("file:src/resources/AssetsKit_2/PNG/Default size/towerDefense_tile042.png");
     public static final Image SPAWNER_IMAGE = new Image("file:src/resources/AssetsKit_2/PNG/Default size/towerDefense_tile109.png");
     public static final Image TARGET_IMAGE = new Image("file:src/resources/AssetsKit_2/PNG/Default size/towerDefense_tile110.png");
 
+    //ENEMY
     public static final Image ENEMY_NORMAL = new Image("file:src/resources/AssetsKit_2/PNG/Default size/towerDefense_tile270.png");
     public static final Image ENEMY_NORMAL_SHADOW = new Image("file:src/resources/AssetsKit_2/PNG/Default size/towerDefense_tile293.png");
 
-
+    //TOWER
     public static final Image TOWER_NORMAL_IMAGE = new Image("file:src/resources/AssetsKit_2/PNG/Default size/towerDefense_tile226.png");
     public static final double TOWER_NORMAL_ATTACK_SPEED = 0.66;
     public static final int TOWER_NORMAL_ATTACK_RANGE = 3 * TILE_SIZE;
@@ -41,6 +43,7 @@ public class Config {
     public static final int TOWER_SNIPER_DAMAGE = 1;
     public static final int TOWER_SNIPER_PRICE = 35;
 
+    //BULLET
     public static final Image BULLET_IMAGE = new Image("file:src/resources/AssetsKit_2/PNG/Default size/towerDefense_tile272.png");
 
     //GUI -- TOWER INFO
@@ -52,5 +55,9 @@ public class Config {
     public static final int TOWER_INFO_ATTACK_SPEED_Y = 0 * TILE_SIZE + 15;
     public static final int TOWER_INFO_ATTACK_RANGE_X = 12 * TILE_SIZE + 25;
     public static final int TOWER_INFO_ATTACK_RANGE_Y = 0 * TILE_SIZE + 40;
+
+    //HEART
+    public static final Image HEART_ALIVE_IMAGE = new Image("file:src/resources/AssetsKit_2/PNG/Retina/towerDefense_tile300.png");
+    public static final Image HEART_DEAD_IMAGE = new Image("file:src/resources/AssetsKit_2/PNG/Retina/towerDefense_tile301.png");
 }
 
