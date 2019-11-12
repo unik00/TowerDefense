@@ -3,11 +3,13 @@ package mygame;
 import javafx.embed.swing.SwingFXUtils;
 import javafx.event.EventHandler;
 import javafx.scene.Group;
+import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.*;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
+import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.stage.Popup;
 import javafx.stage.Stage;
@@ -28,7 +30,7 @@ public class GUIBuilder {
     private List<Rectangle> targets = new ArrayList<Rectangle>();
     private List<ImageView> towerStorage = new ArrayList<ImageView>();
     private ImageView[] hearts = new ImageView[Config.maximumHearts];
-    private Text rewardText = new Text(Config.BALANCE_HORIZONTAL_POSITION, Config.BALANCE_VERTICAL_POSITION, "BALANCE: 0$");
+    private Text rewardAnnouncement = new Text(Config.BALANCE_HORIZONTAL_POSITION, Config.BALANCE_VERTICAL_POSITION, "BALANCE: 0$");
 
     public GUIBuilder(Stage stage, Group root, GameField field, Player player) {
         this.stage = stage;
@@ -45,13 +47,12 @@ public class GUIBuilder {
         this.hearts = hearts;
     }
 
-    public Text getRewardText() {
-        return rewardText;
+    public Text getRewardAnnouncement() {
+        return rewardAnnouncement;
     }
 
-    public void setRewardText(Text rewardText) {
-        this.rewardText = rewardText;
-        System.out.println(rewardText.getText());
+    public void setRewardAnnouncement(Text rewardAnnouncement) {
+        this.rewardAnnouncement = rewardAnnouncement;
     }
 
     public boolean sameImages(Image img1, Image img2) {
@@ -214,6 +215,32 @@ public class GUIBuilder {
     }
 
     public void showBalance() {
-        root.getChildren().add(rewardText);
+        rewardAnnouncement.setFont(Font.font("Arial", 20));
+        root.getChildren().add(rewardAnnouncement);
+    }
+
+    public void getStarted(GameController controller) {
+        Button startButton = new Button("Start");
+        startButton.setLayoutX(Config.START_BUTTON_LAYOUT_X);
+        startButton.setLayoutY(Config.START_BUTTON_LAYOUT_Y);
+        startButton.setFont(Font.font("Arial", 20));
+        startButton.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event) {
+                if (!controller.isStarted()) {
+                    controller.setStarted(true);
+                }
+                event.consume();
+            }
+        });
+        root.getChildren().add(startButton);
+    }
+
+    public void gameOver() {
+        Text gameOverMessage = new Text( "GAME OVER");
+        gameOverMessage.setFont(Font.font("Arial", 64));
+        gameOverMessage.setX(Config.SCREEN_WIDTH/2.0 - 64 * 3-12 - 5 * Config.TILE_SIZE / 2.0);
+        gameOverMessage.setY(Config.SCREEN_HEIGHT/2.0);
+        root.getChildren().add(gameOverMessage);
     }
 }

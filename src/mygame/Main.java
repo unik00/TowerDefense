@@ -34,6 +34,7 @@ public class Main extends Application {
         gui.mouseEnteredTowerStorage();
         gui.showHearts();
         gui.showBalance();
+        gui.getStarted(controller);
 
         controller.start();
     }

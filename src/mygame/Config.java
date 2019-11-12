@@ -14,7 +14,7 @@ public class Config {
 
     //TILE
     public static final Image ROAD_IMAGE = new Image("file:src/resources/AssetsKit_2/PNG/Default size/towerDefense_tile050.png");
-    public static final Image MOUNTAIN_IMAGE = new Image("file:src/resources/AssetsKit_2/PNG/Default size/towerDefense_tile024.png");
+    public static final Image MOUNTAIN_IMAGE = new Image("file:src/resources/AssetsKit_2/PNG/Default size/towerDefense_tile042.png");
     public static final Image SPAWNER_IMAGE = new Image("file:src/resources/AssetsKit_2/PNG/Default size/towerDefense_tile049.png");
     public static final Image TARGET_IMAGE = new Image("file:src/resources/AssetsKit_2/PNG/Default size/towerDefense_tile059.png");
     public static final Image TOWER_BASE_IMAGE = new Image("file:src/resources/AssetsKit_2/PNG/Default size/towerDefense_tile181.png");
@@ -62,13 +62,15 @@ public class Config {
     public static final int HEART_HORIZONTAL_POSITION = TILE_HORIZONTAL * TILE_SIZE + 16;
 
     //BALANCE
-    public static final int BALANCE_HORIZONTAL_POSITION = TILE_HORIZONTAL * TILE_SIZE + 16;
+    public static final int BALANCE_HORIZONTAL_POSITION = (TILE_HORIZONTAL + 1) * TILE_SIZE;
     public static final int BALANCE_VERTICAL_POSITION = 3 * TILE_SIZE;
 
     //PLAYER
     public static final int maximumHearts = 5;
     public static final int initialBalance = 200;
 
-
+    //BUTTON
+    public static final int START_BUTTON_LAYOUT_X = (TILE_HORIZONTAL + 2) * TILE_SIZE;
+    public static final int START_BUTTON_LAYOUT_Y = (TILE_VERTICAL - 1) * TILE_SIZE;
 }
 

@@ -20,7 +20,24 @@ public class GameController extends AnimationTimer {
     private GUIBuilder gui;
     private final long startNanoTime = System.nanoTime();
     private long lastEnemyGenerationTime = 0;
+    private boolean started = false;
+    private boolean gameOver = false;
 
+    public boolean isStarted() {
+        return started;
+    }
+
+    public void setStarted(boolean started) {
+        this.started = started;
+    }
+
+    public boolean isGameOver() {
+        return gameOver;
+    }
+
+    public void setGameOver(boolean gameOver) {
+        this.gameOver = gameOver;
+    }
 
     public GameController(GraphicsContext gc) throws FileNotFoundException {
         this.field = new GameField(GameStage.load("src/stage/demo.txt"));
@@ -51,24 +68,7 @@ public class GameController extends AnimationTimer {
         this.field = field;
     }
 
-    @Override
-    public void handle(long currentNanoTime) {
-
-        for (Entity e : field.getEntities())
-            if (e instanceof Enemy && !e.isAlive()) {
-                if (((Enemy) e).getHitPoint() <= 0)
-                    player.setReward(player.getReward() + ((Enemy) e).getReward());
-                else {
-                    if (player.getRemainingHearts() > 0) {
-                        //System.out.println("aaaaaaaaaaaaaaa");
-                        ImageView[] newHeartsStatus = gui.getHearts();
-                        newHeartsStatus[player.getRemainingHearts() - 1].setImage(Config.HEART_DEAD_IMAGE);
-                        gui.setHearts(newHeartsStatus);
-                        player.setRemainingHearts(player.getRemainingHearts() - 1);
-                    }
-                }
-            }
-
+    private void removeNullEntities(){
         Iterator itr = field.getEntities().iterator();
         while (itr.hasNext()) {
             Entity e = (Entity)(itr.next());
@@ -79,6 +79,29 @@ public class GameController extends AnimationTimer {
                 e.draw(gc);
         }
 
+    }
+
+    private void checkGameOverAndStop(){
+        for (Entity e : field.getEntities())
+            if (e instanceof Enemy && !e.isAlive()) {
+                if (((Enemy) e).getHitPoint() <= 0)
+                    player.setReward(player.getReward() + ((Enemy) e).getReward());
+                else {
+                    if (player.getRemainingHearts() > 0) {
+                        ImageView[] newHeartsStatus = gui.getHearts();
+                        newHeartsStatus[player.getRemainingHearts() - 1].setImage(Config.HEART_DEAD_IMAGE);
+                        gui.setHearts(newHeartsStatus);
+                        player.setRemainingHearts(player.getRemainingHearts() - 1);
+                    }
+                    if (player.getRemainingHearts() == 0) {
+                        gui.gameOver();
+                        setGameOver(true);
+                    }
+                }
+            }
+    }
+    private void handleEnemiesMoving(long currentNanoTime){
+        if (!started) return;
         //ENEMY MOVING
         if (lastEnemyGenerationTime == 0 || (currentNanoTime - lastEnemyGenerationTime) >= (long)2e9){
             Enemy spawned;
@@ -93,7 +116,9 @@ public class GameController extends AnimationTimer {
             if (e instanceof Enemy)
                 ((Enemy) e).move();
         }
+    }
 
+    private void handleTowersShooting(long currentNanoTime){
         //TOWER MOVING
         List<Bullet> createdBullet = new ArrayList<Bullet>();
         for (Entity t : field.getEntities()) {
@@ -122,7 +147,9 @@ public class GameController extends AnimationTimer {
         for (Bullet b : createdBullet) {
             field.getEntities().add(b);
         }
-        // check for removing destroyed object
+    }
+
+    private  void handleEnemiesGettingHit(long currentNanoTime){
         for(Entity e : field.getEntities( )) {
             if (e.isAlive()) {
                 if (e instanceof Enemy) {
@@ -136,18 +163,24 @@ public class GameController extends AnimationTimer {
                 }
             }
         }
-
-        //REWARD CHANGE
-        gui.setRewardText(new Text(gui.getRewardText().getX(), gui.getRewardText().getY(), "BALANCE: " + String.valueOf(player.getReward()) + "$"));
+    }
+    private void handleRewardAnnouncement(){
+        gui.getRewardAnnouncement().setText("BALANCE: " + String.valueOf(player.getReward()) + "$");
     }
 
-    public void initRoot() {
-        //root.getChildren().add(rewardText);
+    @Override
+    public void handle(long currentNanoTime) {
+        if (gameOver) this.stop();
+        this.checkGameOverAndStop();
+        this.removeNullEntities();
+        this.handleEnemiesMoving(currentNanoTime);
+        this.handleTowersShooting(currentNanoTime);
+        this.handleEnemiesGettingHit(currentNanoTime);
+        this.handleRewardAnnouncement();
     }
 
     @Override
     public void start() {
-        initRoot();
         super.start();
     }
 }
