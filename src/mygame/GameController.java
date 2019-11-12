@@ -1,57 +1,46 @@
 package mygame;
 
 import javafx.animation.AnimationTimer;
-import javafx.beans.value.ObservableStringValue;
-import javafx.beans.value.ObservableValue;
-import javafx.event.EventHandler;
-import javafx.scene.Group;
-import javafx.scene.Scene;
 import javafx.scene.canvas.GraphicsContext;
-import javafx.scene.control.Label;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.ClipboardContent;
-import javafx.scene.input.Dragboard;
-import javafx.scene.input.MouseEvent;
-import javafx.scene.input.TransferMode;
 import javafx.scene.text.Text;
 import mygame.enemy.Enemy;
 import mygame.enemy.NormalEnemy;
 import mygame.enemy.TankerEnemy;
-import mygame.tile.Mountain;
 import mygame.tile.tower.Tower;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-import javafx.scene.shape.Rectangle;
 
 public class GameController extends AnimationTimer {
     private GameField field;
-    private GameStage stage;
     private GraphicsContext gc;
-    private Group root;
-    private List<Tower> sampleTower = new ArrayList<Tower>();
-    private ImageView[] hearts = new ImageView[5];
+    private Player player = new Player();
+    private GUIBuilder gui;
     private final long startNanoTime = System.nanoTime();
     private long lastEnemyGenerationTime = 0;
-    private int reward = 200;
-    private int remainingHeart = 5;
-    private Text rewardText = new Text(10 * Config.TILE_SIZE, 5 * Config.TILE_SIZE, "");
 
 
-    public GameController(GraphicsContext gc, Group root) throws FileNotFoundException {
+    public GameController(GraphicsContext gc) throws FileNotFoundException {
         this.field = new GameField(GameStage.load("src/stage/demo.txt"));
         this.gc = gc;
-        this.root = root;
     }
 
-    public int getReward() {
-        return reward;
+    public GUIBuilder getGui() {
+        return gui;
     }
 
-    public void setReward(int reward) {
-        this.reward = reward;
+    public void setGui(GUIBuilder gui) {
+        this.gui = gui;
+    }
+
+    public Player getPlayer() {
+        return player;
+    }
+
+    public void setPlayer(Player player) {
+        this.player = player;
     }
 
     public GameField getField() {
@@ -62,26 +51,20 @@ public class GameController extends AnimationTimer {
         this.field = field;
     }
 
-    public GameStage getStage() {
-        return stage;
-    }
-
-    public void setStage(GameStage stage) {
-        this.stage = stage;
-    }
-
     @Override
     public void handle(long currentNanoTime) {
 
         for (Entity e : field.getEntities())
             if (e instanceof Enemy && !e.isAlive()) {
                 if (((Enemy) e).getHitPoint() <= 0)
-                    reward += ((Enemy) e).getReward();
+                    player.setReward(player.getReward() + ((Enemy) e).getReward());
                 else {
-                    if (remainingHeart > 0) {
+                    if (player.getRemainingHearts() > 0) {
                         //System.out.println("aaaaaaaaaaaaaaa");
-                        hearts[remainingHeart - 1].setImage(Config.HEART_DEAD_IMAGE);
-                        remainingHeart -= 1;
+                        ImageView[] newHeartsStatus = gui.getHearts();
+                        newHeartsStatus[player.getRemainingHearts() - 1].setImage(Config.HEART_DEAD_IMAGE);
+                        gui.setHearts(newHeartsStatus);
+                        player.setRemainingHearts(player.getRemainingHearts() - 1);
                     }
                 }
             }
@@ -90,7 +73,6 @@ public class GameController extends AnimationTimer {
         while (itr.hasNext()) {
             Entity e = (Entity)(itr.next());
             if (!e.isAlive()) {
-                if (e instanceof Enemy && ((Enemy) e).getHitPoint() <= 0) reward += ((Enemy) e).getReward();
                 itr.remove();
             }
             else
@@ -155,19 +137,12 @@ public class GameController extends AnimationTimer {
             }
         }
 
-        //REWARD ANNOUNCEMENT
-        rewardText.setText("BALANCE: " + String.valueOf(reward) + "$");
+        //REWARD CHANGE
+        gui.setRewardText(new Text(gui.getRewardText().getX(), gui.getRewardText().getY(), "BALANCE: " + String.valueOf(player.getReward()) + "$"));
     }
 
     public void initRoot() {
-        root.getChildren().add(rewardText);
-        for (int i = 0; i < 5; ++i) {
-            ImageView iv = new ImageView(Config.HEART_ALIVE_IMAGE);
-            iv.setX((10+i) * Config.TILE_SIZE + 16);
-            iv.setY(4 * Config.TILE_SIZE);
-            hearts[i] = iv;
-            root.getChildren().add(hearts[i]);
-        }
+        //root.getChildren().add(rewardText);
     }
 
     @Override
