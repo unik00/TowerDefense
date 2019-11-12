@@ -51,6 +51,7 @@ public class GUIBuilder {
 
     public void setRewardText(Text rewardText) {
         this.rewardText = rewardText;
+        System.out.println(rewardText.getText());
     }
 
     public boolean sameImages(Image img1, Image img2) {

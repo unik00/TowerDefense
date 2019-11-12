@@ -2,24 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3ba608e2-aa0e-4d56-8f11-4847e64fd41a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/mygame/GUIBuilder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/mygame/Player.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TowerDefense/mygame/Bullet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TowerDefense/mygame/Bullet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TowerDefense/mygame/Config.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TowerDefense/mygame/Config.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TowerDefense/mygame/GameController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TowerDefense/mygame/GameController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TowerDefense/mygame/GameStage.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TowerDefense/mygame/GameStage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TowerDefense/mygame/Main$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TowerDefense/mygame/Main$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TowerDefense/mygame/Main$3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TowerDefense/mygame/Main$4.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TowerDefense/mygame/Main$5.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TowerDefense/mygame/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TowerDefense/mygame/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TowerDefense/stage/demo.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TowerDefense/stage/demo.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mygame/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mygame/Config.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mygame/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mygame/GameController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mygame/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mygame/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/stage/demo.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/stage/demo.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TowerDefense/mygame/GUIBuilder$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TowerDefense/mygame/GUIBuilder$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TowerDefense/mygame/GUIBuilder$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TowerDefense/mygame/GUIBuilder$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TowerDefense/mygame/GUIBuilder$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TowerDefense/mygame/GUIBuilder$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TowerDefense/mygame/GUIBuilder$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TowerDefense/mygame/GUIBuilder$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TowerDefense/mygame/GUIBuilder$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TowerDefense/mygame/GUIBuilder$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TowerDefense/mygame/GUIBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TowerDefense/mygame/GUIBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mygame/GUIBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mygame/GUIBuilder.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
