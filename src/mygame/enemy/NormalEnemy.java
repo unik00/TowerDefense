@@ -25,10 +25,10 @@ public class NormalEnemy extends Enemy {
         super(x, y, field);
         super.setMaximumHitPoint(10);
         super.setHitPoint(10);
+        super.setSpeed(2);
         setShadow(Config.ENEMY_NORMAL_SHADOW);
         setImage(Config.ENEMY_NORMAL);
         setReward(10);
-
     }
 
     public void setDirection(int dx, int dy){

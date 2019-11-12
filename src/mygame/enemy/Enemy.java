@@ -44,7 +44,7 @@ public class Enemy extends Entity {
     }
 
     private int hitPoint;
-    private int speed;
+    private int speed = 1;
     private int armor;
     private int reward;
     public Enemy() {
@@ -121,11 +121,13 @@ public class Enemy extends Entity {
         if (super.getX()==getField().getTargetX() && super.getY()==getField().getTargetY()){
             super.setAlive(false);
         }
+
+        int topLeftX = super.getX() / Config.TILE_SIZE * Config.TILE_SIZE;
+        int topLeftY = super.getY() / Config.TILE_SIZE * Config.TILE_SIZE;
+
         // TODO: add speed
         if (super.getX() % Config.TILE_SIZE == 0 && super.getY() % Config.TILE_SIZE == 0) {
             boolean broken = false;
-            int topLeftX = super.getX() / Config.TILE_SIZE * Config.TILE_SIZE;
-            int topLeftY = super.getY() / Config.TILE_SIZE * Config.TILE_SIZE;
 
             for (int i = 0; i < 4 && !broken; ++i) {
                 if (dx[i] == -getVelocityX() && dy[i] == -getVelocityY())
@@ -134,12 +136,13 @@ public class Enemy extends Entity {
                     if (e instanceof Road) {
                         if (topLeftX + Config.TILE_SIZE * dx[i] == e.getX()
                                 && topLeftY + Config.TILE_SIZE * dy[i] == e.getY()
+                                // find next tile to start the route
                         ) {
                             setDirection(dx[i], dy[i]);
-                            setVelocityX(dx[i]);
-                            setVelocityY(dy[i]);
-                            super.setX(super.getX() + dx[i]);
-                            super.setY(super.getY() + dy[i]);
+                            setVelocityX(dx[i]*speed);
+                            setVelocityY(dy[i]*speed);
+                            super.setX(super.getX() + dx[i]*speed);
+                            super.setY(super.getY() + dy[i]*speed);
                             broken = true;
                             break;
                         }
@@ -148,8 +151,18 @@ public class Enemy extends Entity {
         }
         else {
             // if not in the intersection of grid, continue going
-            super.setX(super.getX() + getVelocityX());
-            super.setY(super.getY() + getVelocityY());
+            int u = super.getX() + getVelocityX();
+            int v = super.getY() + getVelocityY();
+            /*
+            int downRightX = topLeftX + Config.TILE_SIZE - 1;
+            int downRightY = topLeftY + Config.TILE_SIZE - 1;
+            u = Math.min(u, downRightX + 1);
+            v = Math.min(v, downRightY + 1);
+            u = Math.max(u, topLeftX);
+            v = Math.max(v, topLeftY);
+            */
+            super.setX(u);
+            super.setY(v);
         }
     }
 

@@ -17,7 +17,7 @@ public class TankerEnemy extends Enemy {
         super.setHitPoint(20);
         setImage(Config.ENEMY_TANKER_BASE);
         this.gunImage = this.straightGunImage = Config.ENEMY_TANKER_GUN;
-
+        setSpeed(1);
         setReward(20);
 
     }
