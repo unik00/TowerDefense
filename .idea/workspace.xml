@@ -4,8 +4,6 @@
     <list default="true" id="3ba608e2-aa0e-4d56-8f11-4847e64fd41a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/mygame/enemy/Enemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mygame/enemy/Enemy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mygame/enemy/NormalEnemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mygame/enemy/NormalEnemy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mygame/enemy/TankerEnemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mygame/enemy/TankerEnemy.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />

@@ -130,7 +130,7 @@ public class Enemy extends Entity {
             boolean broken = false;
 
             for (int i = 0; i < 4 && !broken; ++i) {
-                if (dx[i] == -getVelocityX() && dy[i] == -getVelocityY())
+                if (speed*dx[i] == -getVelocityX() && speed*dy[i] == -getVelocityY())
                     continue;
                 for (Entity e : super.getField().getEntities())
                     if (e instanceof Road) {
@@ -153,14 +153,14 @@ public class Enemy extends Entity {
             // if not in the intersection of grid, continue going
             int u = super.getX() + getVelocityX();
             int v = super.getY() + getVelocityY();
-            /*
+
             int downRightX = topLeftX + Config.TILE_SIZE - 1;
             int downRightY = topLeftY + Config.TILE_SIZE - 1;
             u = Math.min(u, downRightX + 1);
             v = Math.min(v, downRightY + 1);
             u = Math.max(u, topLeftX);
             v = Math.max(v, topLeftY);
-            */
+            
             super.setX(u);
             super.setY(v);
         }
