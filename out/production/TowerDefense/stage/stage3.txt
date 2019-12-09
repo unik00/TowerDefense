@@ -1,4 +1,1 @@
-Normal 10
-Tanker 10
-Smaller 0
-Boss 0
+10 10 0 0

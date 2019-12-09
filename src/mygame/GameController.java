@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-public class GameController extends AnimationTimer {
+public class GameController extends AnimationTimer{
     private GameField field;
     private GraphicsContext gc;
     private Player player = new Player();
@@ -22,7 +22,6 @@ public class GameController extends AnimationTimer {
     private long lastEnemyGenerationTime = 0;
     private boolean started = false;
     private boolean gameOver = false;
-    private boolean levelFinished = false;
     private Level level;
 
     public boolean isStarted() {
@@ -35,14 +34,6 @@ public class GameController extends AnimationTimer {
 
     public boolean isGameOver() {
         return gameOver;
-    }
-
-    public boolean isLevelFinished() {
-        return levelFinished;
-    }
-
-    public void setLevelFinished(boolean levelFinished) {
-        this.levelFinished = levelFinished;
     }
 
     public void setGameOver(boolean gameOver) {
@@ -182,9 +173,9 @@ public class GameController extends AnimationTimer {
         gui.getLevelAnnouncement().setText("LEVEL: " + String.valueOf(1));
     }
 
-    private void handleFinishLevel() {
-        if (levelFinished) {
-
+    private void handleFinishLevel() throws FileNotFoundException {
+        if (level.isFinished()) {
+            level.loadNextLevel();
         }
         //Stage Finish Announcement
         //gui.stageFinishAnnouncement();
@@ -201,7 +192,13 @@ public class GameController extends AnimationTimer {
         this.handleEnemiesGettingHit(currentNanoTime);
         this.handleRewardAnnouncement();
         this.hanlesCurrentLevel();
-        this.handleFinishLevel();
+        /*try {
+            this.handleFinishLevel();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+
+         */
     }
 
     @Override

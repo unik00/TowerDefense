@@ -1,5 +1,9 @@
 package mygame;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+
 public class Level {
     private int id;
     private int numberOfNormalEnemy;
@@ -7,6 +11,11 @@ public class Level {
     private int numberOfSmallerEnemy;
     private int numberOfBossEnemy;
     private int reward;
+    private boolean finished = false;
+
+    public void setFinished(boolean finished) {
+        this.finished = finished;
+    }
 
     public int getId() {
         return id;
@@ -56,10 +65,14 @@ public class Level {
         this.reward = reward;
     }
 
-    public void loadNextLevel() {
+    public void loadNextLevel() throws FileNotFoundException {
         setId(getId() + 1);
-        String dm = "src/stage/stage" + String.valueOf(getId()) + ".txt";
-        Scanner scanner = new Scanner(new File(dm));
+        finished = false;
+        Scanner scanner = new Scanner(new File("src/stage/stage" + String.valueOf(getId()) + ".txt"));
+        numberOfNormalEnemy = scanner.nextInt();
+        numberOfTankerEnemy = scanner.nextInt();
+        numberOfSmallerEnemy = scanner.nextInt();
+        numberOfBossEnemy = scanner.nextInt();
     }
 
     public boolean isFinished() {
