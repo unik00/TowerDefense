@@ -22,6 +22,8 @@ public class GameController extends AnimationTimer {
     private long lastEnemyGenerationTime = 0;
     private boolean started = false;
     private boolean gameOver = false;
+    private boolean levelFinished = false;
+    private Level level;
 
     public boolean isStarted() {
         return started;
@@ -35,12 +37,20 @@ public class GameController extends AnimationTimer {
         return gameOver;
     }
 
+    public boolean isLevelFinished() {
+        return levelFinished;
+    }
+
+    public void setLevelFinished(boolean levelFinished) {
+        this.levelFinished = levelFinished;
+    }
+
     public void setGameOver(boolean gameOver) {
         this.gameOver = gameOver;
     }
 
     public GameController(GraphicsContext gc) throws FileNotFoundException {
-        this.field = new GameField(GameStage.load("src/stage/demo.txt"));
+        this.field = new GameField(GameStage.load("src/stage/map.txt"));
         this.gc = gc;
     }
 
@@ -103,7 +113,7 @@ public class GameController extends AnimationTimer {
     private void handleEnemiesMoving(long currentNanoTime){
         if (!started) return;
         //ENEMY MOVING
-        if (lastEnemyGenerationTime == 0 || (currentNanoTime - lastEnemyGenerationTime) >= (long)2e9){
+        if (lastEnemyGenerationTime == 0 || (currentNanoTime - lastEnemyGenerationTime) >= (long)1e9){
             Enemy spawned;
             if (currentNanoTime % 2 == 0){
                 spawned = new TankerEnemy(field.getSpawnerX(), field.getSpawnerY(), field);
@@ -112,7 +122,7 @@ public class GameController extends AnimationTimer {
             field.addEntity(spawned);
             lastEnemyGenerationTime = currentNanoTime;
         }
-        for(Entity e : field.getEntities( )){
+        for(Entity e : field.getEntities()){
             if (e instanceof Enemy)
                 ((Enemy) e).move();
         }
@@ -168,6 +178,19 @@ public class GameController extends AnimationTimer {
         gui.getRewardAnnouncement().setText("BALANCE: " + String.valueOf(player.getReward()) + "$");
     }
 
+    private void hanlesCurrentLevel() {
+        gui.getLevelAnnouncement().setText("LEVEL: " + String.valueOf(1));
+    }
+
+    private void handleFinishLevel() {
+        if (levelFinished) {
+
+        }
+        //Stage Finish Announcement
+        //gui.stageFinishAnnouncement();
+        //Next Stage Handler
+    }
+
     @Override
     public void handle(long currentNanoTime) {
         if (gameOver) this.stop();
@@ -177,6 +200,8 @@ public class GameController extends AnimationTimer {
         this.handleTowersShooting(currentNanoTime);
         this.handleEnemiesGettingHit(currentNanoTime);
         this.handleRewardAnnouncement();
+        this.hanlesCurrentLevel();
+        this.handleFinishLevel();
     }
 
     @Override

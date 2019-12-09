@@ -35,6 +35,7 @@ public class Main extends Application {
         gui.showHearts();
         gui.showBalance();
         gui.getStarted(controller);
+        gui.showCurrentLevel();
 
         controller.start();
     }

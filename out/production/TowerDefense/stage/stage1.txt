@@ -1,0 +1,4 @@
+Normal 5
+Tanker 0
+Smaller 0
+Boss 0

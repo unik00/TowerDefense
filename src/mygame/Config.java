@@ -62,12 +62,16 @@ public class Config {
     public static final int HEART_HORIZONTAL_POSITION = TILE_HORIZONTAL * TILE_SIZE + 16;
 
     //BALANCE
-    public static final int BALANCE_HORIZONTAL_POSITION = (TILE_HORIZONTAL + 1) * TILE_SIZE;
+    public static final int BALANCE_HORIZONTAL_POSITION = (TILE_HORIZONTAL + 1) * TILE_SIZE + 32;
     public static final int BALANCE_VERTICAL_POSITION = 3 * TILE_SIZE;
+
+    //LEVEL
+    public static final int LEVEL_HORIZONTAL_POSITION = (TILE_HORIZONTAL + 1) * TILE_SIZE + 48;
+    public static final int LEVEL_VERTICAL_POSITION = 6 * TILE_SIZE;
 
     //PLAYER
     public static final int maximumHearts = 5;
-    public static final int initialBalance = 200;
+    public static final int initialBalance = 50;
 
     //BUTTON
     public static final int START_BUTTON_LAYOUT_X = (TILE_HORIZONTAL + 2) * TILE_SIZE;
