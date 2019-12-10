@@ -68,13 +68,17 @@ public class Config {
     //LEVEL
     public static final int LEVEL_HORIZONTAL_POSITION = (TILE_HORIZONTAL + 1) * TILE_SIZE + 48;
     public static final int LEVEL_VERTICAL_POSITION = 6 * TILE_SIZE;
+    public static final int maximumlevels = 4;
 
     //PLAYER
     public static final int maximumHearts = 5;
-    public static final int initialBalance = 50;
+    public static final int initialBalance = 300;
 
     //BUTTON
     public static final int START_BUTTON_LAYOUT_X = (TILE_HORIZONTAL + 2) * TILE_SIZE;
     public static final int START_BUTTON_LAYOUT_Y = (TILE_VERTICAL - 1) * TILE_SIZE;
+
+    //ELAPSED TIME BETWEEN ENEMY IN EACH LEVEL
+    public static final long elapsedTimeBetweenEnemy[] = {(long)4e9, (long)3e9, (long)2e9, (long)15e8, (long)1e9, (long)5e8};
 }
 

@@ -10,11 +10,20 @@ public class Level {
     private int numberOfTankerEnemy;
     private int numberOfSmallerEnemy;
     private int numberOfBossEnemy;
+    private int enemyLeft;
     private int reward;
-    private boolean finished = false;
 
-    public void setFinished(boolean finished) {
-        this.finished = finished;
+    public Level () {
+        this.id = 0;
+        enemyLeft = 0;
+    }
+
+    public int getEnemyLeft() {
+        return enemyLeft;
+    }
+
+    public void setEnemyLeft(int enemyLeft) {
+        this.enemyLeft = enemyLeft;
     }
 
     public int getId() {
@@ -65,17 +74,23 @@ public class Level {
         this.reward = reward;
     }
 
+
     public void loadNextLevel() throws FileNotFoundException {
         setId(getId() + 1);
-        finished = false;
+        System.out.println(id);
         Scanner scanner = new Scanner(new File("src/stage/stage" + String.valueOf(getId()) + ".txt"));
         numberOfNormalEnemy = scanner.nextInt();
         numberOfTankerEnemy = scanner.nextInt();
         numberOfSmallerEnemy = scanner.nextInt();
         numberOfBossEnemy = scanner.nextInt();
+        enemyLeft = numberOfBossEnemy + numberOfSmallerEnemy + numberOfTankerEnemy + numberOfNormalEnemy;
+    }
+
+    public boolean createdAllEnemy() {
+        return numberOfBossEnemy == 0 && numberOfNormalEnemy == 0 && numberOfSmallerEnemy == 0 && numberOfTankerEnemy == 0;
     }
 
     public boolean isFinished() {
-        return numberOfBossEnemy == 0 && numberOfNormalEnemy == 0 && numberOfSmallerEnemy == 0 && numberOfTankerEnemy == 0;
+        return enemyLeft == 0;
     }
 }

@@ -4,9 +4,7 @@ import javafx.animation.AnimationTimer;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
-import mygame.enemy.Enemy;
-import mygame.enemy.NormalEnemy;
-import mygame.enemy.TankerEnemy;
+import mygame.enemy.*;
 import mygame.tile.tower.Tower;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
@@ -22,7 +20,7 @@ public class GameController extends AnimationTimer{
     private long lastEnemyGenerationTime = 0;
     private boolean started = false;
     private boolean gameOver = false;
-    private Level level;
+    private Level level = new Level();
 
     public boolean isStarted() {
         return started;
@@ -74,7 +72,9 @@ public class GameController extends AnimationTimer{
         while (itr.hasNext()) {
             Entity e = (Entity)(itr.next());
             if (!e.isAlive()) {
+                if (e instanceof Enemy) level.setEnemyLeft(level.getEnemyLeft() - 1 );
                 itr.remove();
+
             }
             else
                 e.draw(gc);
@@ -103,16 +103,40 @@ public class GameController extends AnimationTimer{
     }
     private void handleEnemiesMoving(long currentNanoTime){
         if (!started) return;
-        //ENEMY MOVING
-        if (lastEnemyGenerationTime == 0 || (currentNanoTime - lastEnemyGenerationTime) >= (long)1e9){
-            Enemy spawned;
-            if (currentNanoTime % 2 == 0){
-                spawned = new TankerEnemy(field.getSpawnerX(), field.getSpawnerY(), field);
+        //ENEMY CREATING
+        if (currentNanoTime - lastEnemyGenerationTime >= Config.elapsedTimeBetweenEnemy[level.getId()] && !level.createdAllEnemy()){
+            boolean createdOne = false;
+            while (!createdOne) {
+                int x = (int)(Math.random() * 4);
+                if (x == 0 && level.getNumberOfNormalEnemy() > 0) {
+                    field.addEntity(new NormalEnemy(field.getSpawnerX(), field.getSpawnerY(), field));
+                    createdOne = true;
+                    level.setNumberOfNormalEnemy(level.getNumberOfNormalEnemy() - 1);
+                }
+                if (x == 0 && level.getNumberOfTankerEnemy() > 0) {
+                    field.addEntity(new TankerEnemy(field.getSpawnerX(), field.getSpawnerY(), field));
+                    createdOne = true;
+                    level.setNumberOfTankerEnemy(level.getNumberOfTankerEnemy() - 1);
+                }
+                // tao xong Smaller vs Boss thi xoa cmt di la chay dc
+                /*
+                if (x == 0 && level.getNumberOfSmallerEnemy() > 0) {
+                    field.addEntity(new SmallerEnemy(field.getSpawnerX(), field.getSpawnerY(), field));
+                    createdOne = true;
+                    level.setNumberOfSmallerEnemy(level.getNumberOfSmallerEnemy() - 1);
+                }
+                if (x == 0 && level.getNumberOfBossEnemy() > 0) {
+                    field.addEntity(new BossEnemy(field.getSpawnerX(), field.getSpawnerY(), field));
+                    createdOne = true;
+                    level.setNumberOfBossEnemy(level.getNumberOfBossEnemy() - 1);
+                }
+
+                 */
             }
-            else spawned = new NormalEnemy(field.getSpawnerX(), field.getSpawnerY(), field);
-            field.addEntity(spawned);
             lastEnemyGenerationTime = currentNanoTime;
         }
+
+        //ENEMY MOVING
         for(Entity e : field.getEntities()){
             if (e instanceof Enemy)
                 ((Enemy) e).move();
@@ -170,12 +194,17 @@ public class GameController extends AnimationTimer{
     }
 
     private void hanlesCurrentLevel() {
-        gui.getLevelAnnouncement().setText("LEVEL: " + String.valueOf(1));
+        gui.getLevelAnnouncement().setText("LEVEL: " + String.valueOf(level.getId()));
     }
 
     private void handleFinishLevel() throws FileNotFoundException {
         if (level.isFinished()) {
-            level.loadNextLevel();
+            if (level.getId() == Config.maximumlevels) {
+                gui.victory();
+                this.stop();
+            }
+            else
+                level.loadNextLevel();
         }
         //Stage Finish Announcement
         //gui.stageFinishAnnouncement();
@@ -185,6 +214,12 @@ public class GameController extends AnimationTimer{
     @Override
     public void handle(long currentNanoTime) {
         if (gameOver) this.stop();
+        try {
+            this.handleFinishLevel();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+
         this.checkGameOverAndStop();
         this.removeNullEntities();
         this.handleEnemiesMoving(currentNanoTime);
@@ -192,13 +227,7 @@ public class GameController extends AnimationTimer{
         this.handleEnemiesGettingHit(currentNanoTime);
         this.handleRewardAnnouncement();
         this.hanlesCurrentLevel();
-        /*try {
-            this.handleFinishLevel();
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
 
-         */
     }
 
     @Override

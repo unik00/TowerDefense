@@ -253,6 +253,14 @@ public class GUIBuilder {
         root.getChildren().add(gameOverMessage);
     }
 
+    public void victory() {
+        Text victoryMessage = new Text( "VICTORY");
+        victoryMessage.setFont(Font.font("Arial", 64));
+        victoryMessage.setX(Config.SCREEN_WIDTH/2.0 - Config.TILE_SIZE * 2 -  5 * Config.TILE_SIZE / 2.0);
+        victoryMessage.setY(Config.SCREEN_HEIGHT/2.0);
+        root.getChildren().add(victoryMessage);
+    }
+
     public void showCurrentLevel() {
         levelAnnouncement.setFont(Font.font("Arial", 20));
         root.getChildren().add(levelAnnouncement);
