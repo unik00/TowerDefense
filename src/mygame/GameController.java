@@ -199,7 +199,7 @@ public class GameController extends AnimationTimer{
 
     private void handleFinishLevel() throws FileNotFoundException {
         if (level.isFinished()) {
-            if (level.getId() == Config.maximumlevels) {
+            if (level.getId() == Config.maximumLevels) {
                 gui.victory();
                 this.stop();
             }

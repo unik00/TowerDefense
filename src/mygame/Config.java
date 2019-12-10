@@ -68,11 +68,11 @@ public class Config {
     //LEVEL
     public static final int LEVEL_HORIZONTAL_POSITION = (TILE_HORIZONTAL + 1) * TILE_SIZE + 48;
     public static final int LEVEL_VERTICAL_POSITION = 6 * TILE_SIZE;
-    public static final int maximumlevels = 4;
+    public static final int maximumLevels = 4;
 
     //PLAYER
     public static final int maximumHearts = 5;
-    public static final int initialBalance = 300;
+    public static final int initialBalance = 100;
 
     //BUTTON
     public static final int START_BUTTON_LAYOUT_X = (TILE_HORIZONTAL + 2) * TILE_SIZE;

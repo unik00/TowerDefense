@@ -1,13 +1,13 @@
-Ngô ơi đúng là cái work flow khó hiểu thật :))) 
+Ngô ơi t thêm 1 số cái nhé.
 
-T viết hàm drag vs drop trong main, flow hiện tại trong main là:
+1. Levels
+	Hiện trong folder stage có thêm stage1.txt stage2.txt, ... Mỗi file có 4 số là số lượng các NOrmal Enemy, Tanker, Smaller, Boss Enemy
 
-Khời tạo controller --> xử lí drag && drog --> chạy controller
+2. Khi win hết tất cả level thì có chữ  "VICTORY" hiện lên
 
-Hiện t mới demo thử thôi nên t cho thả tại điểm (6, 2) (ngang, dọc). 
-Nếu ông muốn thử thì drag vs drop thử xem :)))) khs phải drag 2 lần mới đc :v
+3. Trong Config có 1 số cái mới:
+	 
++ elapsedTimeBetweenEnemy[]: giãn cách giữa các con lính (level càng cao thì lính ra càng nhanh)
++ maximumLevels: số lượng levels (hiện t để là 4)
 
-Nma tạm thời thế là cũng at least là drop đc vô và nó tạo thêm 1 cái tower thật :))))
-Bản này t chưa ghép với bản bắn của ông nên ông thử merge xem có đc ko nhá :)))
-
-Node này để in case tối nay ông code tiếp thôi :v sáng mai t code tiếp thì merge cả luôn xem có đc k :)))
+Ông update thêm cái Normal Enemy vs Boss Enemy để cho đủ yêu cầu đề bài nhá.
