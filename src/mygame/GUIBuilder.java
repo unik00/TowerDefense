@@ -31,6 +31,15 @@ public class GUIBuilder {
     private List<ImageView> towerStorage = new ArrayList<ImageView>();
     private ImageView[] hearts = new ImageView[Config.maximumHearts];
     private Text rewardAnnouncement = new Text(Config.BALANCE_HORIZONTAL_POSITION, Config.BALANCE_VERTICAL_POSITION, "BALANCE: 0$");
+    private Text levelAnnouncement = new Text(Config.LEVEL_HORIZONTAL_POSITION, Config.LEVEL_VERTICAL_POSITION, "LEVEL: 1");
+
+    public Text getLevelAnnouncement() {
+        return levelAnnouncement;
+    }
+
+    public void setLevelAnnouncement(Text levelAnnouncement) {
+        this.levelAnnouncement = levelAnnouncement;
+    }
 
     public GUIBuilder(Stage stage, Group root, GameField field, Player player) {
         this.stage = stage;
@@ -242,5 +251,18 @@ public class GUIBuilder {
         gameOverMessage.setX(Config.SCREEN_WIDTH/2.0 - 64 * 3-12 - 5 * Config.TILE_SIZE / 2.0);
         gameOverMessage.setY(Config.SCREEN_HEIGHT/2.0);
         root.getChildren().add(gameOverMessage);
+    }
+
+    public void victory() {
+        Text victoryMessage = new Text( "VICTORY");
+        victoryMessage.setFont(Font.font("Arial", 64));
+        victoryMessage.setX(Config.SCREEN_WIDTH/2.0 - Config.TILE_SIZE * 2 -  5 * Config.TILE_SIZE / 2.0);
+        victoryMessage.setY(Config.SCREEN_HEIGHT/2.0);
+        root.getChildren().add(victoryMessage);
+    }
+
+    public void showCurrentLevel() {
+        levelAnnouncement.setFont(Font.font("Arial", 20));
+        root.getChildren().add(levelAnnouncement);
     }
 }

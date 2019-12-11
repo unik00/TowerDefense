@@ -1,9 +1,6 @@
 package mygame;
 
-import mygame.tile.Mountain;
-import mygame.tile.Road;
-import mygame.tile.Spawner;
-import mygame.tile.Target;
+import mygame.tile.*;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -25,7 +22,7 @@ public class GameStage {
         this.entities = entities;
     }
 
-    public static GameStage load(String stageDir) throws FileNotFoundException {         //tai sao cho nay phai la static?
+    public static GameStage load(String stageDir) throws FileNotFoundException {
         List<Entity> entities;
         entities = new ArrayList<Entity>();
         Scanner scanner = new Scanner(new File(stageDir));

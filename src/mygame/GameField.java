@@ -1,5 +1,6 @@
 package mygame;
 
+import mygame.tile.RandomEntity;
 import mygame.tile.Spawner;
 import mygame.tile.Target;
 import java.util.List;
@@ -65,6 +66,11 @@ public class GameField {
                 this.setTargetX(E.getX());
                 this.setTargetY(E.getY());
             }
+        }
+
+        for (int i = 0; i < Config.RANDOM_ENTITIES_NUM; ++i){
+            RandomEntity randomEntity = new RandomEntity(this);
+            entities.add(randomEntity);
         }
     }
 }
