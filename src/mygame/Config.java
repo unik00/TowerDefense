@@ -13,27 +13,39 @@ public class Config {
     public static final int SCREEN_HEIGHT = TILE_SIZE * TILE_VERTICAL;
 
     //TILE
-    public static final Image ROAD_IMAGE = new Image("file:src/resources/AssetsKit_2/PNG/Default size/towerDefense_tile050.png");
-    public static final Image MOUNTAIN_IMAGE = new Image("file:src/resources/AssetsKit_2/PNG/Default size/towerDefense_tile042.png");
-    public static final Image SPAWNER_IMAGE = new Image("file:src/resources/AssetsKit_2/PNG/Default size/towerDefense_tile049.png");
+    public static final Image ROAD_IMAGE = new Image("file:src/resources/AssetsKit_2/PNG/Default size/towerDefense_tile172.png");
+    public static final Image MOUNTAIN_IMAGE = new Image("file:src/resources/AssetsKit_2/PNG/Default size/towerDefense_tile231.png");
+    public static final Image SPAWNER_IMAGE = new Image("file:src/resources/AssetsKit_2/PNG/Default size/towerDefense_tile172.png");
     public static final Image TARGET_IMAGE = new Image("file:src/resources/AssetsKit_2/PNG/Default size/towerDefense_tile059.png");
     public static final Image TOWER_BASE_IMAGE = new Image("file:src/resources/AssetsKit_2/PNG/Default size/towerDefense_tile181.png");
     public static final Image ENEMY_NORMAL = new Image("file:src/resources/AssetsKit_2/PNG/Default size/towerDefense_tile270.png");
     public static final Image ENEMY_NORMAL_SHADOW = new Image("file:src/resources/AssetsKit_2/PNG/Default size/towerDefense_tile293.png");
+    public static final Image ENEMY_BOSS = new Image("file:src/resources/AssetsKit_2/PNG/Default size/towerDefense_tile271.png");
+    public static final Image ENEMY_BOSS_SHADOW = new Image("file:src/resources/AssetsKit_2/PNG/Default size/towerDefense_tile294.png");
+
+    public static final int RANDOM_ENTITIES_NUM = 30;
+    public static final Image BUSH_IMAGE_1 = new Image("file:src/resources/AssetsKit_2/PNG/Default size/towerDefense_tile131.png");
+    public static final Image BUSH_IMAGE_2 = new Image("file:src/resources/AssetsKit_2/PNG/Default size/towerDefense_tile132.png");
+    public static final Image STONE_IMAGE_1 = new Image("file:src/resources/AssetsKit_2/PNG/Default size/towerDefense_tile135.png");
+    public static final Image STONE_IMAGE_2 = new Image("file:src/resources/AssetsKit_2/PNG/Default size/towerDefense_tile136.png");
+    public static final Image DUST_IMAGE_1 = new Image("file:src/resources/AssetsKit_2/PNG/Default size/towerDefense_tile019.png");
+    public static final Image DUST_IMAGE_2 = new Image("file:src/resources/AssetsKit_2/PNG/Default size/towerDefense_tile020.png");
 
     public static final Image ENEMY_TANKER_GUN = new Image("file:src/resources/AssetsKit_2/PNG/Default size/towerDefense_tile292.png");
     public static final Image ENEMY_TANKER_BASE = new Image("file:src/resources/AssetsKit_2/PNG/Default size/towerDefense_tile268.png");
 
+    public static final Image ENEMY_SMALLER = new Image("file:src/resources/AssetsKit_2/PNG/Default size/towerDefense_tile245.png");
+
     public static final Image TOWER_NORMAL_IMAGE = new Image("file:src/resources/AssetsKit_2/PNG/Default size/towerDefense_tile226.png");
     public static final double TOWER_NORMAL_ATTACK_SPEED = 0.66;
     public static final int TOWER_NORMAL_ATTACK_RANGE = 3 * TILE_SIZE;
-    public static final int TOWER_NORMAL_DAMAGE = 1;
+    public static final int TOWER_NORMAL_DAMAGE = 2;
     public static final int TOWER_NORMAL_PRICE = 25;
 
     public static final Image TOWER_MACHINE_GUN_IMAGE = new Image("file:src/resources/AssetsKit_2/PNG/Default size/towerDefense_tile250.png");
     public static final double TOWER_MACHINE_GUN_ATTACK_SPEED = 2;
     public static final int TOWER_MACHINE_GUN_ATTACK_RANGE = 2 * TILE_SIZE;
-    public static final int TOWER_MACHINE_GUN_DAMAGE = 3;
+    public static final int TOWER_MACHINE_GUN_DAMAGE = 1;
     public static final int TOWER_MACHINE_GUN_PRICE = 50;
 
     public static final Image TOWER_SNIPER_IMAGE = new Image("file:src/resources/AssetsKit_2/PNG/Default size/towerDefense_tile249.png");

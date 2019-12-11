@@ -113,25 +113,24 @@ public class GameController extends AnimationTimer{
                     createdOne = true;
                     level.setNumberOfNormalEnemy(level.getNumberOfNormalEnemy() - 1);
                 }
-                if (x == 0 && level.getNumberOfTankerEnemy() > 0) {
+                if (x == 1 && level.getNumberOfTankerEnemy() > 0) {
                     field.addEntity(new TankerEnemy(field.getSpawnerX(), field.getSpawnerY(), field));
                     createdOne = true;
                     level.setNumberOfTankerEnemy(level.getNumberOfTankerEnemy() - 1);
                 }
                 // tao xong Smaller vs Boss thi xoa cmt di la chay dc
-                /*
-                if (x == 0 && level.getNumberOfSmallerEnemy() > 0) {
+
+                if (x == 2 && level.getNumberOfSmallerEnemy() > 0) {
                     field.addEntity(new SmallerEnemy(field.getSpawnerX(), field.getSpawnerY(), field));
                     createdOne = true;
                     level.setNumberOfSmallerEnemy(level.getNumberOfSmallerEnemy() - 1);
                 }
-                if (x == 0 && level.getNumberOfBossEnemy() > 0) {
+
+                if (x == 3 && level.getNumberOfBossEnemy() > 0) {
                     field.addEntity(new BossEnemy(field.getSpawnerX(), field.getSpawnerY(), field));
                     createdOne = true;
                     level.setNumberOfBossEnemy(level.getNumberOfBossEnemy() - 1);
                 }
-
-                 */
             }
             lastEnemyGenerationTime = currentNanoTime;
         }
