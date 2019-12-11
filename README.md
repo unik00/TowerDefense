@@ -1,6 +1,4 @@
-﻿**
-
-# Tower Defense
+﻿# Tower Defense
 
 Project Bài tập lớn môn Lập trình hướng đối tượng của nhóm CsPhAi
 Nhóm em gồm:
