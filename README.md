@@ -1,9 +1,9 @@
 ﻿# Tower Defense
 
-Project Bài tập lớn môn Lập trình hướng đối tượng của nhóm CsPhAi
+- Project Bài tập lớn môn Lập trình hướng đối tượng của nhóm CsPhAi
 Nhóm em gồm:
-- Bùi Quang Long
-- Ngô Đức Huy
+	- Bùi Quang Long
+	- Ngô Đức Huy
 
 ## Tính năng game
 - **Quân địch**: Mỗi loại quân địch có các chỉ số khác nhau về máu, tốc độ di chuyển và phần thưởng (tiền) nhận được khi bị tiêu diệt. Có 4 loại quân địch:
