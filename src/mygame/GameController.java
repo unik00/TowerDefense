@@ -192,7 +192,7 @@ public class GameController extends AnimationTimer{
         gui.getRewardAnnouncement().setText("BALANCE: " + String.valueOf(player.getReward()) + "$");
     }
 
-    private void hanlesCurrentLevel() {
+    private void handleCurrentLevel() {
         gui.getLevelAnnouncement().setText("LEVEL: " + String.valueOf(level.getId()));
     }
 
@@ -225,7 +225,7 @@ public class GameController extends AnimationTimer{
         this.handleTowersShooting(currentNanoTime);
         this.handleEnemiesGettingHit(currentNanoTime);
         this.handleRewardAnnouncement();
-        this.hanlesCurrentLevel();
+        this.handleCurrentLevel();
 
     }
 

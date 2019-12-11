@@ -10,7 +10,7 @@ public class SmallerEnemy extends Enemy {
         super(x, y, field);
         super.setMaximumHitPoint(10);
         super.setHitPoint(10);
-        super.setSpeed(5);
+        super.setSpeed(4);
         setImage(Config.ENEMY_SMALLER);
         setReward(10);
     }
