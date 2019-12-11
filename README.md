@@ -7,23 +7,23 @@ Nhóm em gồm:
 
 ## Tính năng game
 - **Quân địch**: Mỗi loại quân địch có các chỉ số khác nhau về máu, tốc độ di chuyển và phần thưởng (tiền) nhận được khi bị tiêu diệt. Có 4 loại quân địch:
--- Normal Enemy: Quân địch thường
--- Tanker Enemy: Quân địch nhiều máu, di chuyển chậm
--- Smaller Enemy: Quân địch có kích thước nhỏ, di chuyển nhanh.
--- Boss Enemy: Quân địch có rất nhiều máu và di chuyển rất chậm.
+	- Normal Enemy: Quân địch thường
+	- Tanker Enemy: Quân địch nhiều máu, di chuyển chậm
+	- Smaller Enemy: Quân địch có kích thước nhỏ, di chuyển nhanh.
+	- Boss Enemy: Quân địch có rất nhiều máu và di chuyển rất chậm.
 - **Tháp**: Mỗi tháp có các chỉ số khác nhau về giá mua, sát thương, tầm bắn, tốc độ bắn. Có 3 loại tháp: 
--- Normal Tower: Tháp thường, các chỉ số ở mức trung bình.
--- Sniper Tower: Tháp bắn tỉa, bắn chậm, tầm bắn xa nhưng sát thương cao.
--- Machine Gun Tower: Tháp liên thanh, bắn nhanh, tầm bắn ngắn, sát thương thấp
+	- Normal Tower: Tháp thường, các chỉ số ở mức trung bình.
+	- Sniper Tower: Tháp bắn tỉa, bắn chậm, tầm bắn xa nhưng sát thương cao.
+	- Machine Gun Tower: Tháp liên thanh, bắn nhanh, tầm bắn ngắn, sát thương thấp
 - **Balance**: Lượng tiền hiện có.
--- Tiền dùng để mua tháp.
--- Khi tiêu diệt quân địch, tiền sẽ được tăng lên tùy vào loại quân địch.
+	- Tiền dùng để mua tháp.
+	- Khi tiêu diệt quân địch, tiền sẽ được tăng lên tùy vào loại quân địch.
 - Mạng của người chơi: Khi bắt đầu trò chơi, người chơi sẽ có 5 mạng (tương ứng với 5 trái tim). Mỗi lần có 1 quân địch đi được đến điểm kết thúc thì người chơi sẽ mất 1 mạng.
 - **Luật chơi:**
--- Trò chơi có 4 levels. Trò chơi bắt đầu khi người chơi nhấn vào nút *Start*.
--- Người chơi tiến hành đặt tháp vào bản đồ để tháp tiêu diệt quân địch. 
--- Người chơi sẽ chiến thắng khi vượt qua cả 4 levels.
--- Người chơi sẽ thua cuộc nếu số mạng của người chơi giảm xuống 0.
+	- Trò chơi có 4 levels. Trò chơi bắt đầu khi người chơi nhấn vào nút *Start*.
+	- Người chơi tiến hành đặt tháp vào bản đồ để tháp tiêu diệt quân địch. 
+	- Người chơi sẽ chiến thắng khi vượt qua cả 4 levels.
+	- Người chơi sẽ thua cuộc nếu số mạng của người chơi giảm xuống 0.
 
 ## Coding
 
@@ -44,10 +44,10 @@ Nhóm em gồm:
 	- ...
 	
 **Ưu điểm**
-Game chạy ổn định, không bị giật.
+- Game chạy ổn định, không bị giật.
  
 **Nhược điểm**
-Chưa có nhiều tính năng
+- Chưa có nhiều tính năng
 
 **Các vấn đề khi gặp phải và hướng giải quyết đã sử dụng khi code game:**
 - Máy bay đi vượt xe tăng thì làm cách nào để đảm bảo máy bay không bị xe tăng đè lên khi render?
