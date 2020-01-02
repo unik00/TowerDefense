@@ -1,7 +1,7 @@
 ﻿# Tower Defense
 
-- Project Bài tập lớn môn Lập trình hướng đối tượng của nhóm CsPhAi
-Nhóm em gồm:
+- Project Bài tập lớn môn Lập trình hướng đối tượng của nhóm CsPhAi  
+Nhóm em gồm:  
 	- Bùi Quang Long
 	- Ngô Đức Huy
 
